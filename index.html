@@ -198,16 +198,33 @@
         .sub-card p {
             font-size: 0.85rem;
             color: var(--text-secondary);
+            line-height: 1.4;
         }
 
-        /* GRID DA SUBSEÇÃO DE INSTRUÇÃO (EM LARGURA TOTAL ABAIXO) */
+        .sub-card ul {
+            margin-left: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .sub-card ul li {
+            margin-bottom: 6px;
+        }
+
+        /* GRID DAS SUBSEÇÕES INFERIORES */
         .instrucao-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
         }
 
-        /* INSTRUÇÃO CONTINUADA - BOTOES DE VÍDEO */
+        .saude-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        /* BOTOES DE LIGACAO / LINKS */
         .video-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -232,6 +249,25 @@
         .btn-video:hover {
             background-color: var(--accent-red);
             border-color: var(--accent-red);
+        }
+
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #1e3a8a;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-top: 8px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn-map:hover {
+            background-color: #2563eb;
         }
 
         /* COLUNA DO MEIO DO QUADRO PRINCIPAL */
@@ -267,7 +303,7 @@
             <a href="https://drive.google.com/drive/folders/1-i6bqkFMqGOLt5OYT97uwff4CrA9VlBh" class="btn-link" target="_blank" rel="noopener noreferrer">Drive do Canil 🔗</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSctHVhEEiyki4mcoBYE47xE1i_-zAtL-g2YHzNlGYxL4FTgkg/viewform" class="btn-link" target="_blank" rel="noopener noreferrer">Formulário Palestra 🔗</a>
             <a href="#instrucao-section" class="btn-link">Instrução Continuada</a>
-            <a href="#saude" class="btn-link">Como Usar Plano de Saúde</a>
+            <a href="#saude-section" class="btn-link">Como Usar Plano de Saúde</a>
         </div>
     </nav>
 
@@ -326,7 +362,7 @@
             </div>
         </section>
 
-        <!-- COLUNA MEIO: AVISOS, FÉRIAS E SAÚDE -->
+        <!-- COLUNA MEIO: AVISOS E FÉRIAS -->
         <div class="col-center">
             <section class="card">
                 <div class="card-title">Avisos</div>
@@ -394,14 +430,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </section>
-
-            <section class="card" id="saude">
-                <div class="card-title">🏥 Plano de Saúde</div>
-                <div class="sub-card">
-                    <h4>Como Usar</h4>
-                    <p>Informações de atendimento, guias e rede credenciada militar.</p>
                 </div>
             </section>
         </div>
@@ -552,6 +580,32 @@
                     <a href="https://youtu.be/_NCeVZglZrk" target="_blank" class="btn-video">▶ Modelo Visita Escolas</a>
                     <a href="https://youtu.be/NcEII-2UE_0" target="_blank" class="btn-video">▶ Manejo 04/2026</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBSEÇÃO DEDICADA DE PLANO DE SAÚDE -->
+    <section class="card" id="saude-section" style="margin-top: 20px;">
+        <div class="card-title">🏥 Plano de Saúde Veterinário</div>
+        
+        <div class="saude-grid">
+            <div class="sub-card">
+                <h4>📱 Acesso ao Aplicativo</h4>
+                <p>O plano de saúde veterinário deve ser acessado diretamente pelo aplicativo instalado no <strong>telefone funcional</strong>.</p>
+                <p style="margin-top: 8px;"><strong>Login:</strong> kizzsmachado@hotmail.com</p>
+                <p><strong>Senha:</strong> 02072026</p>
+            </div>
+
+            <div class="sub-card">
+                <h4>🏥 Aquarium Clínica Veterinária 24h</h4>
+                <p><strong>Recomendação:</strong> Indicada por ser a estrutura mais completa para atendimentos de emergência e especialidades.</p>
+                <a href="https://maps.google.com/?q=Aquarium+Clinica+Veterinaria+Aracaju" target="_blank" class="btn-map" rel="noopener noreferrer">📍 Ver no Google Maps</a>
+            </div>
+
+            <div class="sub-card">
+                <h4>🏥 Centro Veterinário Socorro</h4>
+                <p><strong>Recomendação:</strong> Indicado pela facilidade de acesso e proximidade operacional.</p>
+                <a href="https://maps.google.com/?q=Centro+Veterinario+Nossa+Senhora+do+Socorro" target="_blank" class="btn-map" rel="noopener noreferrer">📍 Ver no Google Maps</a>
             </div>
         </div>
     </section>
