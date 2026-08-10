@@ -121,6 +121,35 @@
             justify-content: space-between;
             align-items: center;
             color: #ffffff;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* SELEÇÃO DE MÊS (ABAS DA ESCALA) */
+        .tab-btn {
+            background-color: #2a2a2a;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-gold);
+            color: #000000;
+            border-color: var(--accent-gold);
+        }
+
+        .month-content {
+            display: none;
+        }
+
+        .month-content.active {
+            display: block;
         }
 
         /* TABELAS */
@@ -303,52 +332,107 @@
         <!-- COLUNA ESQUERDA: ESCALA MENSUAL OPERACIONAL -->
         <section class="card">
             <div class="card-title">
-                <span>Escala Mensal - Agosto/2026</span>
+                <span>Escala Mensal</span>
+                <div>
+                    <button class="tab-btn active" onclick="switchMonth('august', this)">Agosto/2026</button>
+                    <button class="tab-btn" onclick="switchMonth('september', this)">Setembro/2026</button>
+                </div>
             </div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Dia</th>
-                            <th>Guarnição (Geral)</th>
-                            <th>Com Certificação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="weekend"><td>01/08/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
-                        <tr class="weekend"><td>02/08/2026</td><td>Domingo</td><td>Sd Prado</td><td>—</td></tr>
-                        <tr><td>03/08/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
-                        <tr><td>04/08/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
-                        <tr><td>05/08/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
-                        <tr><td>06/08/2026</td><td>Quinta-feira</td><td>Sd Prado</td><td>—</td></tr>
-                        <tr><td>07/08/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
-                        <tr class="weekend"><td>08/08/2026</td><td>Sábado</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
-                        <tr class="weekend"><td>09/08/2026</td><td>Domingo</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
-                        <tr><td>10/08/2026</td><td>Segunda-feira</td><td>Sd Prado e Sd Ayran</td><td>—</td></tr>
-                        <tr><td>11/08/2026</td><td>Terça-feira</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
-                        <tr><td>12/08/2026</td><td>Quarta-feira</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
-                        <tr><td>13/08/2026</td><td>Quinta-feira</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
-                        <tr><td>14/08/2026</td><td>Sexta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td>—</td></tr>
-                        <tr class="weekend"><td>15/08/2026</td><td>Sábado</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
-                        <tr class="weekend"><td>16/08/2026</td><td>Domingo</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
-                        <tr><td>17/08/2026</td><td>Segunda-feira</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
-                        <tr><td>18/08/2026</td><td>Terça-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td>—</td></tr>
-                        <tr><td>19/08/2026</td><td>Quarta-feira</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia</td></tr>
-                        <tr><td>20/08/2026</td><td>Quinta-feira</td><td>ST Garcia e Sd Jessica</td><td class="cert">Sd Gledson</td></tr>
-                        <tr><td>21/08/2026</td><td>Sexta-feira</td><td>Sd Nycolle e Sd Caroline</td><td class="cert">Sd Nycolle</td></tr>
-                        <tr class="weekend"><td>22/08/2026</td><td>Sábado</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td class="cert">Sd Prado, Sd Analee</td></tr>
-                        <tr class="weekend"><td>23/08/2026</td><td>Domingo</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia</td></tr>
-                        <tr><td>24/08/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td><td class="cert">Sd Gledson</td></tr>
-                        <tr><td>25/08/2026</td><td>Terça-feira</td><td>Sd Nycolle e Sd Caroline</td><td class="cert">Sd Nycolle</td></tr>
-                        <tr><td>26/08/2026</td><td>Quarta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td class="cert">Sd Analee</td></tr>
-                        <tr><td>27/08/2026</td><td>Quinta-feira</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia e Sd Gledson</td></tr>
-                        <tr><td>28/08/2026</td><td>Sexta-feira</td><td>ST Garcia e Sd Jessica</td><td class="cert">Sd Prado</td></tr>
-                        <tr class="weekend"><td>29/08/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Caroline</td><td class="cert">Sd Nycolle</td></tr>
-                        <tr class="weekend"><td>30/08/2026</td><td>Domingo</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td class="cert">Sd Prado, Sd Analee</td></tr>
-                        <tr><td>31/08/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia e Sd Gledson</td></tr>
-                    </tbody>
-                </table>
+
+            <!-- ESCALA DE AGOSTO -->
+            <div id="august" class="month-content active">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Dia</th>
+                                <th>Guarnição (Geral)</th>
+                                <th>Com Certificação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="weekend"><td>01/08/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
+                            <tr class="weekend"><td>02/08/2026</td><td>Domingo</td><td>Sd Prado</td><td>—</td></tr>
+                            <tr><td>03/08/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
+                            <tr><td>04/08/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
+                            <tr><td>05/08/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
+                            <tr><td>06/08/2026</td><td>Quinta-feira</td><td>Sd Prado</td><td>—</td></tr>
+                            <tr><td>07/08/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
+                            <tr class="weekend"><td>08/08/2026</td><td>Sábado</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
+                            <tr class="weekend"><td>09/08/2026</td><td>Domingo</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
+                            <tr><td>10/08/2026</td><td>Segunda-feira</td><td>Sd Prado e Sd Ayran</td><td>—</td></tr>
+                            <tr><td>11/08/2026</td><td>Terça-feira</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
+                            <tr><td>12/08/2026</td><td>Quarta-feira</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
+                            <tr><td>13/08/2026</td><td>Quinta-feira</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
+                            <tr><td>14/08/2026</td><td>Sexta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td>—</td></tr>
+                            <tr class="weekend"><td>15/08/2026</td><td>Sábado</td><td>Sgt Claudia e Sd Gledson</td><td>—</td></tr>
+                            <tr class="weekend"><td>16/08/2026</td><td>Domingo</td><td>ST Garcia e Sd Jessica</td><td>—</td></tr>
+                            <tr><td>17/08/2026</td><td>Segunda-feira</td><td>Sd Nycolle e Sd Caroline</td><td>—</td></tr>
+                            <tr><td>18/08/2026</td><td>Terça-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td>—</td></tr>
+                            <tr><td>19/08/2026</td><td>Quarta-feira</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia</td></tr>
+                            <tr><td>20/08/2026</td><td>Quinta-feira</td><td>ST Garcia e Sd Jessica</td><td class="cert">Sd Gledson</td></tr>
+                            <tr><td>21/08/2026</td><td>Sexta-feira</td><td>Sd Nycolle e Sd Caroline</td><td class="cert">Sd Nycolle</td></tr>
+                            <tr class="weekend"><td>22/08/2026</td><td>Sábado</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td class="cert">Sd Prado, Sd Analee</td></tr>
+                            <tr class="weekend"><td>23/08/2026</td><td>Domingo</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia</td></tr>
+                            <tr><td>24/08/2026</td><td>Segunda-feira</td><td>ST Garcia e Sd Jessica</td><td class="cert">Sd Gledson</td></tr>
+                            <tr><td>25/08/2026</td><td>Terça-feira</td><td>Sd Nycolle e Sd Caroline</td><td class="cert">Sd Nycolle</td></tr>
+                            <tr><td>26/08/2026</td><td>Quarta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td class="cert">Sd Analee</td></tr>
+                            <tr><td>27/08/2026</td><td>Quinta-feira</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia e Sd Gledson</td></tr>
+                            <tr><td>28/08/2026</td><td>Sexta-feira</td><td>ST Garcia e Sd Jessica</td><td class="cert">Sd Prado</td></tr>
+                            <tr class="weekend"><td>29/08/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Caroline</td><td class="cert">Sd Nycolle</td></tr>
+                            <tr class="weekend"><td>30/08/2026</td><td>Domingo</td><td>Sd Prado, Sd Analee e Sd Ayran</td><td class="cert">Sd Prado, Sd Analee</td></tr>
+                            <tr><td>31/08/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td><td class="cert">Sgt Claudia e Sd Gledson</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ESCALA DE SETEMBRO -->
+            <div id="september" class="month-content">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Dia</th>
+                                <th>Guarnição (Geral)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>01/09/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr><td>02/09/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr><td>03/09/2026</td><td>Quinta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr><td>04/09/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr class="weekend"><td>05/09/2026</td><td>Sábado</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr class="weekend"><td>06/09/2026</td><td>Domingo</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr><td>07/09/2026</td><td>Segunda-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr><td>08/09/2026</td><td>Terça-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr><td>09/09/2026</td><td>Quarta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr><td>10/09/2026</td><td>Quinta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr><td>11/09/2026</td><td>Sexta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr class="weekend"><td>12/09/2026</td><td>Sábado</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr class="weekend"><td>13/09/2026</td><td>Domingo</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr><td>14/09/2026</td><td>Segunda-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr><td>15/09/2026</td><td>Terça-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr><td>16/09/2026</td><td>Quarta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr><td>17/09/2026</td><td>Quinta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr><td>18/09/2026</td><td>Sexta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr class="weekend"><td>19/09/2026</td><td>Sábado</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr class="weekend"><td>20/09/2026</td><td>Domingo</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr><td>21/09/2026</td><td>Segunda-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr><td>22/09/2026</td><td>Terça-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr><td>23/09/2026</td><td>Quarta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr><td>24/09/2026</td><td>Quinta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr><td>25/09/2026</td><td>Sexta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr class="weekend"><td>26/09/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                            <tr class="weekend"><td>27/09/2026</td><td>Domingo</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                            <tr><td>28/09/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                            <tr><td>29/09/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                            <tr><td>30/09/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -607,6 +691,27 @@
     <footer>
         <p>Documento gerado para controle interno de escala de serviço — SBRESC</p>
     </footer>
+
+    <!-- SCRIPT DE TROCA DE MÊS -->
+    <script>
+        function switchMonth(monthId, btnElement) {
+            // Esconde todas as tabelas de meses
+            var contents = document.querySelectorAll('.month-content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            // Remove a classe 'active' de todos os botões
+            var buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            // Ativa o mês e o botão selecionados
+            document.getElementById(monthId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
