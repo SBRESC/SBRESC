@@ -1,3 +1,9 @@
+Aqui está o código HTML com as alterações solicitadas na escala de **Projetos Sociais de Setembro/2026**:
+
+1. **Quarta-feira (09/09/2026):** Adicionado o atendimento no **Hospital da Zona Sul** com a guarnição já escalada para a quarta-feira correspondente (*Sd Prado e SD Analee*).
+2. **Quarta-feira (23/09/2026):** Adicionado o atendimento no **Hospital da Zona Sul** mantendo a guarnição escalada (*ST Garcia*).
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -276,11 +282,13 @@
 </head>
 <body>
 
+    <!-- CABEÇALHO -->
     <header>
         <img src="g1412.png" alt="Logo SBRESC">
         <h1>SBRESC</h1>
     </header>
 
+    <!-- MENU / LINKS EXTERNOS -->
     <nav>
         <h2>Menu Quick Links & Subseções</h2>
         <div class="links-grid">
@@ -292,8 +300,10 @@
         </div>
     </nav>
 
+    <!-- PAINEL PRINCIPAL (DASHBOARD GRID) -->
     <main class="dashboard-grid">
         
+        <!-- COLUNA ESQUERDA: ESCALA MENSUAL OPERACIONAL (SETEMBRO/2026) -->
         <section class="card">
             <div class="card-title">
                 <span>Escala Mensal - Setembro/2026</span>
@@ -344,6 +354,7 @@
             </div>
         </section>
 
+        <!-- COLUNA MEIO: AVISOS E FÉRIAS -->
         <div class="col-center">
             <section class="card">
                 <div class="card-title">Avisos</div>
@@ -365,6 +376,7 @@
                 </div>
             </section>
 
+            <!-- SUBSEÇÃO FÉRIAS -->
             <section class="card">
                 <div class="card-title">🏖️ Escala de Férias</div>
                 <div class="table-container">
@@ -418,6 +430,7 @@
             </section>
         </div>
 
+        <!-- COLUNA DIREITA: ESCALA DE PROJETOS SOCIAIS (SETEMBRO/2026 ATUALIZADA) -->
         <section class="card">
             <div class="card-title">Projetos Sociais - Set/2026</div>
             <div class="table-container">
@@ -450,6 +463,12 @@
                             <td>Saída AJU 14:00</td>
                         </tr>
                         <tr>
+                            <td>09/09</td>
+                            <td>SD Prado e SD Analee</td>
+                            <td>Hospital da Zona Sul</td>
+                            <td>10:00</td>
+                        </tr>
+                        <tr>
                             <td>10/09</td>
                             <td>Sgt Claudia e Sd Gledson</td>
                             <td>APAE Aracaju</td>
@@ -480,6 +499,12 @@
                             <td>Saída AJU 14:00</td>
                         </tr>
                         <tr>
+                            <td>23/09</td>
+                            <td>ST Garcia</td>
+                            <td>Hospital da Zona Sul</td>
+                            <td>10:00</td>
+                        </tr>
+                        <tr>
                             <td>24/09</td>
                             <td>CB Varjão e SD Gledson</td>
                             <td>APAE Aracaju</td>
@@ -504,6 +529,7 @@
 
     </main>
 
+    <!-- SUBSEÇÃO DEDICADA DE INSTRUÇÃO CONTINUADA -->
     <section class="card" id="instrucao-section" style="margin-top: 10px;">
         <div class="card-title">📚 Instrução Continuada</div>
         
@@ -584,6 +610,7 @@
         </div>
     </section>
 
+    <!-- SUBSEÇÃO DEDICADA DE PLANO DE SAÚDE -->
     <section class="card" id="saude-section" style="margin-top: 20px;">
         <div class="card-title">🏥 Plano de Saúde Veterinário</div>
         
@@ -615,3 +642,5 @@
 
 </body>
 </html>
+
+```
