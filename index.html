@@ -1,6 +1,4 @@
-Aqui está o código HTML atualizado! O registro da visita do dia **30/09** no **Hospital da Zona Sul** foi removido da tabela de **Projetos Sociais**:
 
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -126,33 +124,6 @@ Aqui está o código HTML atualizado! O registro da visita do dia **30/09** no *
             color: #ffffff;
             flex-wrap: wrap;
             gap: 10px;
-        }
-
-        /* SELEÇÃO DE MÊS (ABAS DA ESCALA) */
-        .tab-btn {
-            background-color: #2a2a2a;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .tab-btn.active {
-            background-color: var(--accent-gold);
-            color: #000000;
-            border-color: var(--accent-gold);
-        }
-
-        .month-content {
-            display: none;
-        }
-
-        .month-content.active {
-            display: block;
         }
 
         /* TABELAS */
@@ -335,109 +306,55 @@ Aqui está o código HTML atualizado! O registro da visita do dia **30/09** no *
     <!-- PAINEL PRINCIPAL (DASHBOARD GRID) -->
     <main class="dashboard-grid">
         
-        <!-- COLUNA ESQUERDA: ESCALA MENSUAL OPERACIONAL -->
+        <!-- COLUNA ESQUERDA: ESCALA MENSUAL OPERACIONAL (OUTUBRO/2026) -->
         <section class="card">
             <div class="card-title">
-                <span>Escala Mensal</span>
-                <div>
-                    <button class="tab-btn" onclick="switchMonth('september', this)">Setembro/2026</button>
-                    <button class="tab-btn active" onclick="switchMonth('october', this)">Outubro/2026</button>
-                </div>
+                <span>Escala Mensal - Outubro/2026</span>
             </div>
 
-            <!-- ESCALA DE SETEMBRO -->
-            <div id="september" class="month-content">
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Dia</th>
-                                <th>Guarnição (Geral)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>01/09/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>02/09/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>03/09/2026</td><td>Quinta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>04/09/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr class="weekend"><td>05/09/2026</td><td>Sábado</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr class="weekend"><td>06/09/2026</td><td>Domingo</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>07/09/2026</td><td>Segunda-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>08/09/2026</td><td>Terça-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr><td>09/09/2026</td><td>Quarta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>10/09/2026</td><td>Quinta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>11/09/2026</td><td>Sexta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr class="weekend"><td>12/09/2026</td><td>Sábado</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr class="weekend"><td>13/09/2026</td><td>Domingo</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>14/09/2026</td><td>Segunda-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>15/09/2026</td><td>Terça-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>16/09/2026</td><td>Quarta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr><td>17/09/2026</td><td>Quinta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>18/09/2026</td><td>Sexta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr class="weekend"><td>19/09/2026</td><td>Sábado</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr class="weekend"><td>20/09/2026</td><td>Domingo</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr><td>21/09/2026</td><td>Segunda-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>22/09/2026</td><td>Terça-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>23/09/2026</td><td>Quarta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>24/09/2026</td><td>Quinta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr><td>25/09/2026</td><td>Sexta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr class="weekend"><td>26/09/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr class="weekend"><td>27/09/2026</td><td>Domingo</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>28/09/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr><td>29/09/2026</td><td>Terça-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>30/09/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- ESCALA DE OUTUBRO -->
-            <div id="october" class="month-content active">
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Dia</th>
-                                <th>Guarnição (Geral)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>01/10/2026</td><td>Quinta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>02/10/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr class="weekend highlight-shift"><td>03/10/2026</td><td>Sábado</td><td>Sgt Claudia e Sd Prado</td></tr>
-                            <tr class="weekend highlight-shift"><td>04/10/2026</td><td>Domingo</td><td>Sgt Claudia e Sd Prado</td></tr>
-                            <tr><td>05/10/2026</td><td>Segunda-feira</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>06/10/2026</td><td>Terça-feira</td><td>Sgt Claudia</td></tr>
-                            <tr class="highlight-shift"><td>07/10/2026</td><td>Quarta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>08/10/2026</td><td>Quinta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>09/10/2026</td><td>Sexta-feira</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr class="weekend"><td>10/10/2026</td><td>Sábado</td><td>Sd Nycolle</td></tr>
-                            <tr class="weekend highlight-shift"><td>11/10/2026</td><td>Domingo</td><td>St Garcia e Sd Jessica</td></tr>
-                            <tr><td>12/10/2026</td><td>Segunda-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>13/10/2026</td><td>Terça-feira</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>14/10/2026</td><td>Quarta-feira</td><td>Sgt Claudia</td></tr>
-                            <tr class="highlight-shift"><td>15/10/2026</td><td>Quinta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>16/10/2026</td><td>Sexta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr class="weekend"><td>17/10/2026</td><td>Sábado</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr class="weekend"><td>18/10/2026</td><td>Domingo</td><td>ST Garcia</td></tr>
-                            <tr class="highlight-shift"><td>19/10/2026</td><td>Segunda-feira</td><td>ST Garcia e Sd Jessica</td></tr>
-                            <tr><td>20/10/2026</td><td>Terça-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>21/10/2026</td><td>Quarta-feira</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>22/10/2026</td><td>Quinta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr class="highlight-shift"><td>23/10/2026</td><td>Sexta-feira</td><td>ST Garcia</td></tr>
-                            <tr class="weekend"><td>24/10/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Ayran</td></tr>
-                            <tr class="weekend"><td>25/10/2026</td><td>Domingo</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>26/10/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr class="highlight-shift"><td>27/10/2026</td><td>Terça-feira</td><td>ST Garcia</td></tr>
-                            <tr><td>28/10/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
-                            <tr><td>29/10/2026</td><td>Quinta-feira</td><td>Sd Analee e Sd Ayran</td></tr>
-                            <tr><td>30/10/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
-                            <tr class="weekend highlight-shift"><td>31/10/2026</td><td>Sábado</td><td>ST Garcia</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Dia</th>
+                            <th>Guarnição (Geral)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>01/10/2026</td><td>Quinta-feira</td><td>Sd Prado, Sd Analee e Sd Ayran</td></tr>
+                        <tr><td>02/10/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                        <tr class="weekend highlight-shift"><td>03/10/2026</td><td>Sábado</td><td>Sgt Claudia e Sd Prado</td></tr>
+                        <tr class="weekend highlight-shift"><td>04/10/2026</td><td>Domingo</td><td>Sgt Claudia e Sd Prado</td></tr>
+                        <tr><td>05/10/2026</td><td>Segunda-feira</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr><td>06/10/2026</td><td>Terça-feira</td><td>Sgt Claudia</td></tr>
+                        <tr class="highlight-shift"><td>07/10/2026</td><td>Quarta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                        <tr><td>08/10/2026</td><td>Quinta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                        <tr><td>09/10/2026</td><td>Sexta-feira</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr class="weekend"><td>10/10/2026</td><td>Sábado</td><td>Sd Nycolle</td></tr>
+                        <tr class="weekend highlight-shift"><td>11/10/2026</td><td>Domingo</td><td>ST Garcia e Sd Jessica</td></tr>
+                        <tr><td>12/10/2026</td><td>Segunda-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                        <tr><td>13/10/2026</td><td>Terça-feira</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr><td>14/10/2026</td><td>Quarta-feira</td><td>Sgt Claudia</td></tr>
+                        <tr class="highlight-shift"><td>15/10/2026</td><td>Quinta-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                        <tr><td>16/10/2026</td><td>Sexta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                        <tr class="weekend"><td>17/10/2026</td><td>Sábado</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr class="weekend"><td>18/10/2026</td><td>Domingo</td><td>ST Garcia</td></tr>
+                        <tr class="highlight-shift"><td>19/10/2026</td><td>Segunda-feira</td><td>ST Garcia e Sd Jessica</td></tr>
+                        <tr><td>20/10/2026</td><td>Terça-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                        <tr><td>21/10/2026</td><td>Quarta-feira</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr><td>22/10/2026</td><td>Quinta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                        <tr class="highlight-shift"><td>23/10/2026</td><td>Sexta-feira</td><td>ST Garcia</td></tr>
+                        <tr class="weekend"><td>24/10/2026</td><td>Sábado</td><td>Sd Nycolle e Sd Ayran</td></tr>
+                        <tr class="weekend"><td>25/10/2026</td><td>Domingo</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr><td>26/10/2026</td><td>Segunda-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                        <tr class="highlight-shift"><td>27/10/2026</td><td>Terça-feira</td><td>ST Garcia</td></tr>
+                        <tr><td>28/10/2026</td><td>Quarta-feira</td><td>Sd Nycolle e Sd Caroline</td></tr>
+                        <tr><td>29/10/2026</td><td>Quinta-feira</td><td>Sd Analee e Sd Ayran</td></tr>
+                        <tr><td>30/10/2026</td><td>Sexta-feira</td><td>Sgt Claudia e Sd Gledson</td></tr>
+                        <tr class="weekend highlight-shift"><td>31/10/2026</td><td>Sábado</td><td>ST Garcia</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -517,9 +434,9 @@ Aqui está o código HTML atualizado! O registro da visita do dia **30/09** no *
             </section>
         </div>
 
-        <!-- COLUNA DIREITA: ESCALA DE PROJETOS SOCIAIS -->
+        <!-- COLUNA DIREITA: ESCALA DE PROJETOS SOCIAIS (OUTUBRO/2026) -->
         <section class="card">
-            <div class="card-title">Projetos Sociais - Set/2026</div>
+            <div class="card-title">Projetos Sociais - Out/2026</div>
             <div class="table-container">
                 <table class="table-mini">
                     <thead>
@@ -532,76 +449,76 @@ Aqui está o código HTML atualizado! O registro da visita do dia **30/09** no *
                     </thead>
                     <tbody>
                         <tr>
-                            <td>02/09</td>
-                            <td>Ten. Mirian e Sd Ayran</td>
-                            <td>Hospital da Zona Sul</td>
+                            <td>01/10</td>
+                            <td>Sgt Claudia e SD Gledson</td>
+                            <td>APAE Aracaju</td>
+                            <td>09:30</td>
+                        </tr>
+                        <tr>
+                            <td>06/10</td>
+                            <td>ST Garcia e Sd Jessica</td>
+                            <td>HU Lagarto</td>
+                            <td>Saída AJU 14:00</td>
+                        </tr>
+                        <tr>
+                            <td>07/10</td>
+                            <td>Sgt Claudia e Sd Ayran</td>
+                            <td>Hospital Zona Sul</td>
                             <td>10:00</td>
                         </tr>
                         <tr>
-                            <td>03/09</td>
+                            <td>08/10</td>
                             <td>ST Garcia e Sd Jessica</td>
                             <td>APAE Aracaju</td>
                             <td>09:30</td>
                         </tr>
                         <tr>
-                            <td>08/09</td>
-                            <td>SD Analee e SD Gledson</td>
-                            <td>HU Lagarto</td>
-                            <td>Saída AJU 14:00</td>
-                        </tr>
-                        <tr>
-                            <td>09/09</td>
-                            <td>SD Prado e SD Analee</td>
-                            <td>Hospital da Zona Sul</td>
-                            <td>10:00</td>
-                        </tr>
-                        <tr>
-                            <td>10/09</td>
-                            <td>Sgt Claudia e Sd Gledson</td>
-                            <td>APAE Aracaju</td>
-                            <td>09:30</td>
-                        </tr>
-                        <tr>
-                            <td>15/09</td>
-                            <td>Sd Jessica e Sd Caroline</td>
+                            <td>13/10</td>
+                            <td>Sd Analee e Sd Caroline</td>
                             <td>Hospital da Criança</td>
                             <td>15:00</td>
                         </tr>
                         <tr>
-                            <td>16/09</td>
-                            <td>SD Prado e SD Analee</td>
-                            <td>Hospital da Zona Sul</td>
+                            <td>14/10</td>
+                            <td>ST Garcia e Sd Jessica</td>
+                            <td>Hospital Zona Sul</td>
                             <td>10:00</td>
                         </tr>
                         <tr>
-                            <td>17/09</td>
-                            <td>SD Nycolle e SD Ayran</td>
+                            <td>15/10</td>
+                            <td>Sgt Claudia e SD Ayran</td>
                             <td>APAE Aracaju</td>
                             <td>09:30</td>
                         </tr>
                         <tr>
-                            <td>22/09</td>
+                            <td>20/10</td>
                             <td>ST Garcia</td>
                             <td>HU Lagarto</td>
                             <td>Saída AJU 14:00</td>
                         </tr>
                         <tr>
-                            <td>23/09</td>
-                            <td>ST Garcia</td>
-                            <td>Hospital da Zona Sul</td>
+                            <td>21/10</td>
+                            <td>Sgt Claudia e Sd Caroline</td>
+                            <td>Hospital Zona Sul</td>
                             <td>10:00</td>
                         </tr>
                         <tr>
-                            <td>24/09</td>
-                            <td>CB Varjão e SD Gledson</td>
+                            <td>22/10</td>
+                            <td>ST Garcia</td>
                             <td>APAE Aracaju</td>
                             <td>09:30</td>
                         </tr>
                         <tr>
-                            <td>29/09</td>
-                            <td>SD Ayran e Sd Caroline</td>
+                            <td>27/10</td>
+                            <td>ST Garcia e SD Caroline</td>
                             <td>Hospital da Criança</td>
                             <td>15:00</td>
+                        </tr>
+                        <tr>
+                            <td>29/10</td>
+                            <td>Sgt Claudia e Sd Ayran</td>
+                            <td>APAE Aracaju</td>
+                            <td>09:30</td>
                         </tr>
                     </tbody>
                 </table>
@@ -721,24 +638,6 @@ Aqui está o código HTML atualizado! O registro da visita do dia **30/09** no *
     <footer>
         <p>Documento gerado para controle interno de escala de serviço — SBRESC</p>
     </footer>
-
-    <!-- SCRIPT DE TROCA DE MÊS -->
-    <script>
-        function switchMonth(monthId, btnElement) {
-            var contents = document.querySelectorAll('.month-content');
-            contents.forEach(function(content) {
-                content.classList.remove('active');
-            });
-
-            var buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(function(btn) {
-                btn.classList.remove('active');
-            });
-
-            document.getElementById(monthId).classList.add('active');
-            btnElement.classList.add('active');
-        }
-    </script>
 
 </body>
 </html>
