@@ -270,7 +270,7 @@
             background-color: #2563eb;
         }
 
-        /* ESTILOS ESPECÍFICOS DO GRUPO MAX MACEDO */
+        /* ESTILOS ESPECÍFICOS DO GRUPO MAX MACEDO (ACORDEÃO EXPANSÍVEL) */
         .max-macedo-card {
             grid-column: 1 / -1;
             background: #1a1a1a;
@@ -291,26 +291,82 @@
             padding-bottom: 6px;
         }
 
-        .course-block {
-            margin-bottom: 14px;
+        details.course-block {
+            margin-bottom: 10px;
             background: #222;
-            padding: 10px 12px;
             border-radius: 6px;
             border: 1px solid #333;
+            overflow: hidden;
         }
 
-        .course-title {
+        details.course-block:last-child {
+            margin-bottom: 0;
+        }
+
+        summary.course-title {
+            list-style: none;
+            cursor: pointer;
             font-weight: 700;
             color: #ffffff;
             font-size: 0.95rem;
-            margin-bottom: 6px;
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+
+        summary.course-title::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.course-title:hover {
+            background-color: #2a2a2a;
+        }
+
+        summary.course-title::after {
+            content: '+';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #333;
+            color: var(--accent-gold);
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            line-height: 1;
+            flex-shrink: 0;
+            border: 1px solid #444;
+        }
+
+        details.course-block[open] summary.course-title {
+            border-bottom: 1px solid #333;
+            background-color: #262626;
+        }
+
+        details.course-block[open] summary.course-title::after {
+            content: '−';
+            background-color: var(--accent-red);
+            color: #ffffff;
+            border-color: var(--accent-red);
+        }
+
+        .course-content {
+            padding: 10px 14px 14px 14px;
         }
 
         .module-block {
             margin-top: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             padding-left: 10px;
             border-left: 2px solid var(--border-color);
+        }
+
+        .module-block:last-child {
+            margin-bottom: 0;
         }
 
         .module-title {
@@ -318,18 +374,6 @@
             font-weight: 600;
             color: var(--text-secondary);
             margin-bottom: 4px;
-        }
-
-        .badge-soon {
-            display: inline-block;
-            background-color: #333;
-            color: var(--text-secondary);
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-style: italic;
-            border: 1px solid #444;
-            margin-top: 4px;
         }
 
         /* COLUNA DO MEIO DO QUADRO PRINCIPAL */
@@ -680,375 +724,385 @@
                 <h3>🐾 Cursos Max Macedo</h3>
 
                 <!-- CURSO I -->
-                <div class="course-block">
-                    <div class="course-title">I - Entendendo o Aprendizado Canino</div>
-                    
-                    <div class="module-block">
-                        <div class="module-title">Módulo 1 - Introdutório</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/0AinvjUA2eo" target="_blank" class="btn-video">▶ Aula 1 - Introdutória</a>
-                            <a href="https://youtu.be/Hlsy5R3WZxQ" target="_blank" class="btn-video">▶ Aula 2 - História do Adestramento (Parte 1)</a>
-                            <a href="https://youtu.be/xDSGAStUAG4" target="_blank" class="btn-video">▶ Aula 3 - História do Adestramento (Parte 2)</a>
-                            <a href="https://youtu.be/ezAmHOYvhtc" target="_blank" class="btn-video">▶ Aula 4 - História do Adestramento (Parte 3)</a>
-                            <a href="https://youtu.be/cJT60NLT1As" target="_blank" class="btn-video">▶ Aula 5 - Bem-Estar Animal (Parte 1)</a>
-                            <a href="https://youtu.be/VWiKhSMvSF8" target="_blank" class="btn-video">▶ Aula 6 - Bem-Estar Animal (Parte 2)</a>
-                            <a href="https://youtu.be/48jJU4BGooU" target="_blank" class="btn-video">▶ Aula 7 - Genética e Melhoramento Aplicado (Parte 1)</a>
-                            <a href="https://youtu.be/kO-cBz5wVQg" target="_blank" class="btn-video">▶ Aula 8 - Genética e Melhoramento Aplicado (Parte 2)</a>
+                <details class="course-block">
+                    <summary class="course-title">I - Entendendo o Aprendizado Canino</summary>
+                    <div class="course-content">
+                        <div class="module-block">
+                            <div class="module-title">Módulo 1 - Introdutório</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/0AinvjUA2eo" target="_blank" class="btn-video">▶ Aula 1 - Introdutória</a>
+                                <a href="https://youtu.be/Hlsy5R3WZxQ" target="_blank" class="btn-video">▶ Aula 2 - História do Adestramento (Parte 1)</a>
+                                <a href="https://youtu.be/xDSGAStUAG4" target="_blank" class="btn-video">▶ Aula 3 - História do Adestramento (Parte 2)</a>
+                                <a href="https://youtu.be/ezAmHOYvhtc" target="_blank" class="btn-video">▶ Aula 4 - História do Adestramento (Parte 3)</a>
+                                <a href="https://youtu.be/cJT60NLT1As" target="_blank" class="btn-video">▶ Aula 5 - Bem-Estar Animal (Parte 1)</a>
+                                <a href="https://youtu.be/VWiKhSMvSF8" target="_blank" class="btn-video">▶ Aula 6 - Bem-Estar Animal (Parte 2)</a>
+                                <a href="https://youtu.be/48jJU4BGooU" target="_blank" class="btn-video">▶ Aula 7 - Genética e Melhoramento Aplicado (Parte 1)</a>
+                                <a href="https://youtu.be/kO-cBz5wVQg" target="_blank" class="btn-video">▶ Aula 8 - Genética e Melhoramento Aplicado (Parte 2)</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 1 - Introdução]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/efhkurl-VSU" target="_blank" class="btn-video">▶ Aula 1 - História da Ciência do Comportamento</a>
-                            <a href="https://youtu.be/Gc656ueKA8o" target="_blank" class="btn-video">▶ Aula 2 - Introdução ao Comportamento: Genética x Ambiente</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 1 - Introdução]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/efhkurl-VSU" target="_blank" class="btn-video">▶ Aula 1 - História da Ciência do Comportamento</a>
+                                <a href="https://youtu.be/Gc656ueKA8o" target="_blank" class="btn-video">▶ Aula 2 - Introdução ao Comportamento: Genética x Ambiente</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 2 - Neuropsicologia da Infância]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/L_mJrLSMetI" target="_blank" class="btn-video">▶ Aula 1 - Importância do Mecanismo da Fome para o Desenvol. Neurológico</a>
-                            <a href="https://youtu.be/RSOh4Q39aVo" target="_blank" class="btn-video">▶ Aula 2 - Escolha de Filhotes</a>
-                            <a href="https://youtu.be/VeLuHXYaTUk" target="_blank" class="btn-video">▶ Aula 3 - Filhotes e Períodos Críticos (Parte 1)</a>
-                            <a href="https://youtu.be/FfRaSR0i48M" target="_blank" class="btn-video">▶ Aula 4 - Filhotes e Períodos Críticos (Parte 2)</a>
-                            <a href="https://youtu.be/GSceAubKXps" target="_blank" class="btn-video">▶ Aula 5 - Filhotes e Períodos Críticos (Parte 3)</a>
-                            <a href="https://youtu.be/38BYZKiyfWo" target="_blank" class="btn-video">▶ Aula 6 - Noções de Neurofisiologia e Neurociência</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 2 - Neuropsicologia da Infância]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/L_mJrLSMetI" target="_blank" class="btn-video">▶ Aula 1 - Importância do Mecanismo da Fome para o Desenvol. Neurológico</a>
+                                <a href="https://youtu.be/RSOh4Q39aVo" target="_blank" class="btn-video">▶ Aula 2 - Escolha de Filhotes</a>
+                                <a href="https://youtu.be/VeLuHXYaTUk" target="_blank" class="btn-video">▶ Aula 3 - Filhotes e Períodos Críticos (Parte 1)</a>
+                                <a href="https://youtu.be/FfRaSR0i48M" target="_blank" class="btn-video">▶ Aula 4 - Filhotes e Períodos Críticos (Parte 2)</a>
+                                <a href="https://youtu.be/GSceAubKXps" target="_blank" class="btn-video">▶ Aula 5 - Filhotes e Períodos Críticos (Parte 3)</a>
+                                <a href="https://youtu.be/38BYZKiyfWo" target="_blank" class="btn-video">▶ Aula 6 - Noções de Neurofisiologia e Neurociência</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 3 - Componentes Ambientais do Comportamento]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/iLALriqS3yE" target="_blank" class="btn-video">▶ Aula 1 - Condicionamento Clássico (Parte 1)</a>
-                            <a href="https://youtu.be/sskIKqkAEqM" target="_blank" class="btn-video">▶ Aula 2 - Condicionamento Clássico (Parte 2)</a>
-                            <a href="https://youtu.be/wtv-7m_TrE8" target="_blank" class="btn-video">▶ Aula 3 - Condicionamento Clássico (Parte 3)</a>
-                            <a href="https://youtu.be/sBTN97vZ6ZQ" target="_blank" class="btn-video">▶ Aula 4 - Condicionamento Instrumental</a>
-                            <a href="https://youtu.be/M406aP4haNk" target="_blank" class="btn-video">▶ Aula 5 - Conceito de Reforço: Positivo e Negativo</a>
-                            <a href="https://youtu.be/WQh5TLPR7yI" target="_blank" class="btn-video">▶ Aula 6 - Conceito de Punição: Positiva e Negativa</a>
-                            <a href="https://youtu.be/jKKtCI-E4Lg" target="_blank" class="btn-video">▶ Aula 7 - Comportamento Operante</a>
-                            <a href="https://youtu.be/zPjuMuYvAm0" target="_blank" class="btn-video">▶ Aula 8 - Intervalos de Reforço</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 3 - Componentes Ambientais do Comportamento]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/iLALriqS3yE" target="_blank" class="btn-video">▶ Aula 1 - Condicionamento Clássico (Parte 1)</a>
+                                <a href="https://youtu.be/sskIKqkAEqM" target="_blank" class="btn-video">▶ Aula 2 - Condicionamento Clássico (Parte 2)</a>
+                                <a href="https://youtu.be/wtv-7m_TrE8" target="_blank" class="btn-video">▶ Aula 3 - Condicionamento Clássico (Parte 3)</a>
+                                <a href="https://youtu.be/sBTN97vZ6ZQ" target="_blank" class="btn-video">▶ Aula 4 - Condicionamento Instrumental</a>
+                                <a href="https://youtu.be/M406aP4haNk" target="_blank" class="btn-video">▶ Aula 5 - Conceito de Reforço: Positivo e Negativo</a>
+                                <a href="https://youtu.be/WQh5TLPR7yI" target="_blank" class="btn-video">▶ Aula 6 - Conceito de Punição: Positiva e Negativa</a>
+                                <a href="https://youtu.be/jKKtCI-E4Lg" target="_blank" class="btn-video">▶ Aula 7 - Comportamento Operante</a>
+                                <a href="https://youtu.be/zPjuMuYvAm0" target="_blank" class="btn-video">▶ Aula 8 - Intervalos de Reforço</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 4 - Componentes Inatos do Comportamento]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/ax0JzhHxheE" target="_blank" class="btn-video">▶ Aula 1 - O Instinto ou Impulso</a>
-                            <a href="https://youtu.be/nxOgDcFwvCE" target="_blank" class="btn-video">▶ Aula 2 - Comportamento Funcional de Aquisição de Alimento</a>
-                            <a href="https://youtu.be/H1UCcie9zl0" target="_blank" class="btn-video">▶ Aula 3 - Impulso de Caça (Parte 1)</a>
-                            <a href="https://youtu.be/ZCPejRPk1kQ" target="_blank" class="btn-video">▶ Aula 4 - Impulso de Caça (Parte 2)</a>
-                            <a href="https://youtu.be/Nx5fAp95LpQ" target="_blank" class="btn-video">▶ Aula 5 - A Defesa</a>
-                            <a href="https://youtu.be/RIXqsbISAzo" target="_blank" class="btn-video">▶ Aula 6 - A Fuga</a>
-                            <a href="https://youtu.be/26suag4nz3s" target="_blank" class="btn-video">▶ Aula 7 - O Conceito de Coragem</a>
-                            <a href="https://youtu.be/btEPugsKFB8" target="_blank" class="btn-video">▶ Aula 8 - Centro da Luta ou Fuga</a>
-                            <a href="https://youtu.be/GdM3TvD0BGc" target="_blank" class="btn-video">▶ Aula 9 - O Stress</a>
-                            <a href="https://youtu.be/HFqtJN8auvc" target="_blank" class="btn-video">▶ Aula 10 - Impulso de Agressão (Parte 1)</a>
-                            <a href="https://youtu.be/g6Wo9o8kGGU" target="_blank" class="btn-video">▶ Aula 11 - Impulso de Agressão (Parte 2)</a>
-                            <a href="https://youtu.be/-vwyqZr3QaI" target="_blank" class="btn-video">▶ Aula 12 - As Origens da Agressão</a>
-                            <a href="https://youtu.be/s3Uiz859SdU" target="_blank" class="btn-video">▶ Aula 13 - Comportamentos Agressivos (Parte 1)</a>
-                            <a href="https://youtu.be/54mdxsFfNQE" target="_blank" class="btn-video">▶ Aula 14 - Comportamentos Agressivos (Parte 2)</a>
-                            <a href="https://youtu.be/C4iHgwwyIaE" target="_blank" class="btn-video">▶ Aula 15 - Leitura Comportamental</a>
-                            <a href="https://youtu.be/FqQxcD0nH3M" target="_blank" class="btn-video">▶ Aula 16 - Diagrama Caça / Defesa / Agressão</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 2 - Comportamento Animal e Neurociência [Parte 4 - Componentes Inatos do Comportamento]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/ax0JzhHxheE" target="_blank" class="btn-video">▶ Aula 1 - O Instinto ou Impulso</a>
+                                <a href="https://youtu.be/nxOgDcFwvCE" target="_blank" class="btn-video">▶ Aula 2 - Comportamento Funcional de Aquisição de Alimento</a>
+                                <a href="https://youtu.be/H1UCcie9zl0" target="_blank" class="btn-video">▶ Aula 3 - Impulso de Caça (Parte 1)</a>
+                                <a href="https://youtu.be/ZCPejRPk1kQ" target="_blank" class="btn-video">▶ Aula 4 - Impulso de Caça (Parte 2)</a>
+                                <a href="https://youtu.be/Nx5fAp95LpQ" target="_blank" class="btn-video">▶ Aula 5 - A Defesa</a>
+                                <a href="https://youtu.be/RIXqsbISAzo" target="_blank" class="btn-video">▶ Aula 6 - A Fuga</a>
+                                <a href="https://youtu.be/26suag4nz3s" target="_blank" class="btn-video">▶ Aula 7 - O Conceito de Coragem</a>
+                                <a href="https://youtu.be/btEPugsKFB8" target="_blank" class="btn-video">▶ Aula 8 - Centro da Luta ou Fuga</a>
+                                <a href="https://youtu.be/GdM3TvD0BGc" target="_blank" class="btn-video">▶ Aula 9 - O Stress</a>
+                                <a href="https://youtu.be/HFqtJN8auvc" target="_blank" class="btn-video">▶ Aula 10 - Impulso de Agressão (Parte 1)</a>
+                                <a href="https://youtu.be/g6Wo9o8kGGU" target="_blank" class="btn-video">▶ Aula 11 - Impulso de Agressão (Parte 2)</a>
+                                <a href="https://youtu.be/-vwyqZr3QaI" target="_blank" class="btn-video">▶ Aula 12 - As Origens da Agressão</a>
+                                <a href="https://youtu.be/s3Uiz859SdU" target="_blank" class="btn-video">▶ Aula 13 - Comportamentos Agressivos (Parte 1)</a>
+                                <a href="https://youtu.be/54mdxsFfNQE" target="_blank" class="btn-video">▶ Aula 14 - Comportamentos Agressivos (Parte 2)</a>
+                                <a href="https://youtu.be/C4iHgwwyIaE" target="_blank" class="btn-video">▶ Aula 15 - Leitura Comportamental</a>
+                                <a href="https://youtu.be/FqQxcD0nH3M" target="_blank" class="btn-video">▶ Aula 16 - Diagrama Caça / Defesa / Agressão</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 1 - Plano de Ensino]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/-SS-JhirNUU" target="_blank" class="btn-video">▶ Aula 1 - O Treinamento</a>
-                            <a href="https://youtu.be/Qwe-v1KFLcI" target="_blank" class="btn-video">▶ Aula 2 - Treinamentos Positivo e Negativo</a>
-                            <a href="https://youtu.be/cO-v7LhNHNE" target="_blank" class="btn-video">▶ Aula 3 - Diagrama Comparativo (Positivo x Negativo)</a>
-                            <a href="https://youtu.be/e8GyecxweF4" target="_blank" class="btn-video">▶ Aula 4 - O Clicker 01</a>
-                            <a href="https://youtu.be/Yua14dyY10U" target="_blank" class="btn-video">▶ Aula 5 - O Clicker 02</a>
-                            <a href="https://youtu.be/9K49bD6HtYE" target="_blank" class="btn-video">▶ Aula 6 - Modelagem</a>
-                            <a href="https://youtu.be/cy2t5bvjqe0" target="_blank" class="btn-video">▶ Aula 7 - Programa de Ensino 01</a>
-                            <a href="https://youtu.be/jV54zaTOOkA" target="_blank" class="btn-video">▶ Aula 8 - Programa de Ensino 02</a>
-                            <a href="https://youtu.be/o-vxzPhjh8c" target="_blank" class="btn-video">▶ Aula 9 - Método do Contato 01: Hierarquia da Comunicação</a>
-                            <a href="https://youtu.be/NAvT0Ptgg40" target="_blank" class="btn-video">▶ Aula 10 - Método do Contato 02: Posições pelo Reforço Positivo</a>
-                            <a href="https://youtu.be/CpY30oMYdU0" target="_blank" class="btn-video">▶ Aula 11 - Método do Contato 03: Contato Manual</a>
-                            <a href="https://youtu.be/F0xqxTuj2jE" target="_blank" class="btn-video">▶ Aula 12 - Método do Contato 04: Contato Mecânico</a>
-                            <a href="https://youtu.be/aC_SOBpnv4M" target="_blank" class="btn-video">▶ Aula 13 - Método do Contato 05: Contato Verbal</a>
-                            <a href="https://youtu.be/BB_D3MJ4Jks" target="_blank" class="btn-video">▶ Aula 14 - O Ciclo do Aprendizado</a>
-                            <a href="https://youtu.be/6FCviOnrkcY" target="_blank" class="btn-video">▶ Aula 15 - A Pirâmide do Aprendizado</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 1 - Plano de Ensino]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/-SS-JhirNUU" target="_blank" class="btn-video">▶ Aula 1 - O Treinamento</a>
+                                <a href="https://youtu.be/Qwe-v1KFLcI" target="_blank" class="btn-video">▶ Aula 2 - Treinamentos Positivo e Negativo</a>
+                                <a href="https://youtu.be/cO-v7LhNHNE" target="_blank" class="btn-video">▶ Aula 3 - Diagrama Comparativo (Positivo x Negativo)</a>
+                                <a href="https://youtu.be/e8GyecxweF4" target="_blank" class="btn-video">▶ Aula 4 - O Clicker 01</a>
+                                <a href="https://youtu.be/Yua14dyY10U" target="_blank" class="btn-video">▶ Aula 5 - O Clicker 02</a>
+                                <a href="https://youtu.be/9K49bD6HtYE" target="_blank" class="btn-video">▶ Aula 6 - Modelagem</a>
+                                <a href="https://youtu.be/cy2t5bvjqe0" target="_blank" class="btn-video">▶ Aula 7 - Programa de Ensino 01</a>
+                                <a href="https://youtu.be/jV54zaTOOkA" target="_blank" class="btn-video">▶ Aula 8 - Programa de Ensino 02</a>
+                                <a href="https://youtu.be/o-vxzPhjh8c" target="_blank" class="btn-video">▶ Aula 9 - Método do Contato 01: Hierarquia da Comunicação</a>
+                                <a href="https://youtu.be/NAvT0Ptgg40" target="_blank" class="btn-video">▶ Aula 10 - Método do Contato 02: Posições pelo Reforço Positivo</a>
+                                <a href="https://youtu.be/CpY30oMYdU0" target="_blank" class="btn-video">▶ Aula 11 - Método do Contato 03: Contato Manual</a>
+                                <a href="https://youtu.be/F0xqxTuj2jE" target="_blank" class="btn-video">▶ Aula 12 - Método do Contato 04: Contato Mecânico</a>
+                                <a href="https://youtu.be/aC_SOBpnv4M" target="_blank" class="btn-video">▶ Aula 13 - Método do Contato 05: Contato Verbal</a>
+                                <a href="https://youtu.be/BB_D3MJ4Jks" target="_blank" class="btn-video">▶ Aula 14 - O Ciclo do Aprendizado</a>
+                                <a href="https://youtu.be/6FCviOnrkcY" target="_blank" class="btn-video">▶ Aula 15 - A Pirâmide do Aprendizado</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 2 - Equipamentos]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/xFzDrsaLapM" target="_blank" class="btn-video">▶ Aula 1 - Introdução</a>
-                            <a href="https://youtu.be/UhyJoLBeOU0" target="_blank" class="btn-video">▶ Aula 2 - Equipamentos Motivacionais</a>
-                            <a href="https://youtu.be/G8_3_mcefYs" target="_blank" class="btn-video">▶ Aula 3 - Equipamentos São Apenas Ferramentas!</a>
-                            <a href="https://youtu.be/OzKPXTeGqPM" target="_blank" class="btn-video">▶ Aula 4 - Contato Contínuo e Momentâneo</a>
-                            <a href="https://youtu.be/ZtGw0gE1ZQw" target="_blank" class="btn-video">▶ Aula 5 - O Efeito do Negativo</a>
-                            <a href="https://youtu.be/I-cjz0G4CtE" target="_blank" class="btn-video">▶ Aula 6 - Equipamentos de Contenção e Controle</a>
-                            <a href="https://youtu.be/42-sMOSf848" target="_blank" class="btn-video">▶ Aula 7 - Acessórios e Equipamentos de Suporte</a>
-                            <a href="https://youtu.be/Ncz0WaqJZS4" target="_blank" class="btn-video">▶ Aula 8 - A Caixa de Transporte</a>
-                            <a href="https://youtu.be/z3lsmy3u78U" target="_blank" class="btn-video">▶ Aula 9 - A Mesa Pedagógica</a>
-                            <a href="https://youtu.be/oKmQ2XWfSJ4" target="_blank" class="btn-video">▶ Aula 10 - Caixas de Referência 01</a>
-                            <a href="https://youtu.be/mLC1kB0V4IE" target="_blank" class="btn-video">▶ Aula 11 - Caixas de Referência 02</a>
-                            <a href="https://youtu.be/WmlJ0Pz-kXw" target="_blank" class="btn-video">▶ Aula 12 - Outras Referências: Crie!</a>
-                            <a href="https://youtu.be/BstRM-KTbOs" target="_blank" class="btn-video">▶ Aula 13 - O Poste Flexível Flex Pole</a>
-                            <a href="https://youtu.be/vNs1mBlNceM" target="_blank" class="btn-video">▶ Aula 14 - Liberador de Bolas Ball Machine</a>
-                            <a href="https://youtu.be/B36p-k2iqW4" target="_blank" class="btn-video">▶ Aula 15 - Miniatura de Esconderijo</a>
-                            <a href="https://youtu.be/1GaLgEtvnMs" target="_blank" class="btn-video">▶ Aula 16 - Barreiras de Saltos ou Obstáculos</a>
-                            <a href="https://youtu.be/iPvA1VanONA" target="_blank" class="btn-video">▶ Aula 17 - O Espelho (Parte 1)</a>
-                            <a href="https://youtu.be/eRMzpWhA8Lw" target="_blank" class="btn-video">▶ Aula 17.1 - O Espelho (Parte 2)</a>
-                            <a href="https://youtu.be/QKXJ0y_hIBM" target="_blank" class="btn-video">▶ Aula 18 - Vareta de Contato</a>
-                            <a href="https://youtu.be/BRa_MOqh-Cg" target="_blank" class="btn-video">▶ Aula 19 - Os Halteres</a>
-                            <a href="https://youtu.be/RJvJ6lL23hE" target="_blank" class="btn-video">▶ Aula 20 - A Rampa</a>
-                            <a href="https://youtu.be/Va674dBa6PM" target="_blank" class="btn-video">▶ Aula 21 - A Barreira de 1 Metro</a>
-                            <a href="https://youtu.be/yHC37V_qQG4" target="_blank" class="btn-video">▶ Aula 22 - O Esconderijo do IPO</a>
-                            <a href="https://youtu.be/qZr1PYJaERU" target="_blank" class="btn-video">▶ Aula 23 - Luva e Bastão</a>
-                            <a href="https://youtu.be/VmDFaGRIHO4" target="_blank" class="btn-video">▶ Aula 24 - Roupão de Proteção IPO</a>
-                            <a href="https://youtu.be/tCnKMtEYDJA" target="_blank" class="btn-video">▶ Aula 25 - Estacas de Início de Pista de Faro</a>
-                            <a href="https://youtu.be/zc3FnkfBCUk" target="_blank" class="btn-video">▶ Aula 26 - Chicote Whip</a>
-                            <a href="https://youtu.be/sQuZ18vj8sM" target="_blank" class="btn-video">▶ Aula 27 - Local de Treino: Sua Sala de Aulas</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 2 - Equipamentos]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/xFzDrsaLapM" target="_blank" class="btn-video">▶ Aula 1 - Introdução</a>
+                                <a href="https://youtu.be/UhyJoLBeOU0" target="_blank" class="btn-video">▶ Aula 2 - Equipamentos Motivacionais</a>
+                                <a href="https://youtu.be/G8_3_mcefYs" target="_blank" class="btn-video">▶ Aula 3 - Equipamentos São Apenas Ferramentas!</a>
+                                <a href="https://youtu.be/OzKPXTeGqPM" target="_blank" class="btn-video">▶ Aula 4 - Contato Contínuo e Momentâneo</a>
+                                <a href="https://youtu.be/ZtGw0gE1ZQw" target="_blank" class="btn-video">▶ Aula 5 - O Efeito do Negativo</a>
+                                <a href="https://youtu.be/I-cjz0G4CtE" target="_blank" class="btn-video">▶ Aula 6 - Equipamentos de Contenção e Controle</a>
+                                <a href="https://youtu.be/42-sMOSf848" target="_blank" class="btn-video">▶ Aula 7 - Acessórios e Equipamentos de Suporte</a>
+                                <a href="https://youtu.be/Ncz0WaqJZS4" target="_blank" class="btn-video">▶ Aula 8 - A Caixa de Transporte</a>
+                                <a href="https://youtu.be/z3lsmy3u78U" target="_blank" class="btn-video">▶ Aula 9 - A Mesa Pedagógica</a>
+                                <a href="https://youtu.be/oKmQ2XWfSJ4" target="_blank" class="btn-video">▶ Aula 10 - Caixas de Referência 01</a>
+                                <a href="https://youtu.be/mLC1kB0V4IE" target="_blank" class="btn-video">▶ Aula 11 - Caixas de Referência 02</a>
+                                <a href="https://youtu.be/WmlJ0Pz-kXw" target="_blank" class="btn-video">▶ Aula 12 - Outras Referências: Crie!</a>
+                                <a href="https://youtu.be/BstRM-KTbOs" target="_blank" class="btn-video">▶ Aula 13 - O Poste Flexível Flex Pole</a>
+                                <a href="https://youtu.be/vNs1mBlNceM" target="_blank" class="btn-video">▶ Aula 14 - Liberador de Bolas Ball Machine</a>
+                                <a href="https://youtu.be/B36p-k2iqW4" target="_blank" class="btn-video">▶ Aula 15 - Miniatura de Esconderijo</a>
+                                <a href="https://youtu.be/1GaLgEtvnMs" target="_blank" class="btn-video">▶ Aula 16 - Barreiras de Saltos ou Obstáculos</a>
+                                <a href="https://youtu.be/iPvA1VanONA" target="_blank" class="btn-video">▶ Aula 17 - O Espelho (Parte 1)</a>
+                                <a href="https://youtu.be/eRMzpWhA8Lw" target="_blank" class="btn-video">▶ Aula 17.1 - O Espelho (Parte 2)</a>
+                                <a href="https://youtu.be/QKXJ0y_hIBM" target="_blank" class="btn-video">▶ Aula 18 - Vareta de Contato</a>
+                                <a href="https://youtu.be/BRa_MOqh-Cg" target="_blank" class="btn-video">▶ Aula 19 - Os Halteres</a>
+                                <a href="https://youtu.be/RJvJ6lL23hE" target="_blank" class="btn-video">▶ Aula 20 - A Rampa</a>
+                                <a href="https://youtu.be/Va674dBa6PM" target="_blank" class="btn-video">▶ Aula 21 - A Barreira de 1 Metro</a>
+                                <a href="https://youtu.be/yHC37V_qQG4" target="_blank" class="btn-video">▶ Aula 22 - O Esconderijo do IPO</a>
+                                <a href="https://youtu.be/qZr1PYJaERU" target="_blank" class="btn-video">▶ Aula 23 - Luva e Bastão</a>
+                                <a href="https://youtu.be/VmDFaGRIHO4" target="_blank" class="btn-video">▶ Aula 24 - Roupão de Proteção IPO</a>
+                                <a href="https://youtu.be/tCnKMtEYDJA" target="_blank" class="btn-video">▶ Aula 25 - Estacas de Início de Pista de Faro</a>
+                                <a href="https://youtu.be/zc3FnkfBCUk" target="_blank" class="btn-video">▶ Aula 26 - Chicote Whip</a>
+                                <a href="https://youtu.be/sQuZ18vj8sM" target="_blank" class="btn-video">▶ Aula 27 - Local de Treino: Sua Sala de Aulas</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 3 - Vamos aos Treinos no Mundo Ideal!]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/N3HzD-_8u8I" target="_blank" class="btn-video">▶ Aula 1 - Introdução</a>
-                            <a href="https://youtu.be/CUD7dcvT9xo" target="_blank" class="btn-video">▶ Aula 2 - Fundamentos, Posições e Cognição</a>
-                            <a href="https://youtu.be/lpr5Hz7Qny0" target="_blank" class="btn-video">▶ Aula 3 - Motivação</a>
-                            <a href="https://youtu.be/0op5RSvpzCE" target="_blank" class="btn-video">▶ Aula 4 - Utilidades da Caixa de Transporte</a>
-                            <a href="https://youtu.be/J_sq50bAPa4" target="_blank" class="btn-video">▶ Aula 5 - Ensinando Filhote a Entrar na Caixa</a>
-                            <a href="https://youtu.be/zvHgnU3hzBo" target="_blank" class="btn-video">▶ Aula 6 - Utilizando Caixa nos Treinos</a>
-                            <a href="https://youtu.be/xfBTVY-RG5o" target="_blank" class="btn-video">▶ Aula 7 - Preparando Ração para Treinar</a>
-                            <a href="https://youtu.be/pELmcnXW-4I" target="_blank" class="btn-video">▶ Aula 8 - Ambiente Motivacional: Mesa Pedagógica 01</a>
-                            <a href="https://youtu.be/7JI-0Qi3gxU" target="_blank" class="btn-video">▶ Aula 9 - Ambiente Motivacional: Mesa Pedagógica 02</a>
-                            <a href="https://youtu.be/JXEdPLoEQ1s" target="_blank" class="btn-video">▶ Aula 10 - Ambiente Motivacional: Caixa de Referência</a>
-                            <a href="https://youtu.be/CUWfWfBBlrk" target="_blank" class="btn-video">▶ Aula 11 - Ambiente Motivacional: Campo (Parte 1)</a>
-                            <a href="https://youtu.be/hWPsOxJm70I" target="_blank" class="btn-video">▶ Aula 12 - Ambiente Motivacional: Campo (Parte 2)</a>
-                            <a href="https://youtu.be/DWtPf8smvtM" target="_blank" class="btn-video">▶ Aula 13 - Não Ensine Cão a Fugir com Bola</a>
-                            <a href="https://youtu.be/rlswMaDu7nk" target="_blank" class="btn-video">▶ Aula 14 - Uso da Guia de Contato</a>
-                            <a href="https://youtu.be/8TjeDfLAUN0" target="_blank" class="btn-video">▶ Aula 15 - A Mesa do Início (Parte 1)</a>
-                            <a href="https://youtu.be/9x2wNkt4USM" target="_blank" class="btn-video">▶ Aula 16 - A Mesa do Início (Parte 2)</a>
-                            <a href="https://youtu.be/coCNv06i1xY" target="_blank" class="btn-video">▶ Aula 17 - Contato Manual: O Início</a>
-                            <a href="https://youtu.be/PAe8eIArWQI" target="_blank" class="btn-video">▶ Aula 18 - Contato Manual: Continuando</a>
-                            <a href="https://youtu.be/QWi2t08xXLU" target="_blank" class="btn-video">▶ Aula 19 - Transição Manual para Mecânico</a>
-                            <a href="https://youtu.be/AhnJCruTu4c" target="_blank" class="btn-video">▶ Aula 20 - Contato Mecânico: O Início</a>
-                            <a href="https://youtu.be/Jzg8fKzlqQI" target="_blank" class="btn-video">▶ Aula 21 - Contato Mecânico: Continuando (1)</a>
-                            <a href="https://youtu.be/cabpnT08rwI" target="_blank" class="btn-video">▶ Aula 22 - Contato Mecânico: Continuando (2)</a>
-                            <a href="https://youtu.be/o4eP7wQC2Mk" target="_blank" class="btn-video">▶ Aula 23 - Contato Verbal: O Início</a>
-                            <a href="https://youtu.be/BhiI-pkhVgo" target="_blank" class="btn-video">▶ Aula 24 - Contato Verbal: Indo para o Chão</a>
-                            <a href="https://youtu.be/hL9f461iUHY" target="_blank" class="btn-video">▶ Aula 25 - Contato Verbal: Continuando no Chão (1)</a>
-                            <a href="https://youtu.be/WzJUlTRnSoQ" target="_blank" class="btn-video">▶ Aula 26 - Contato Verbal: Continuando no Chão (2)</a>
-                            <a href="https://youtu.be/fi7nDxAdsGc" target="_blank" class="btn-video">▶ Aula 27 - Contato Verbal: Elevando a Emoção</a>
-                            <a href="https://youtu.be/1-2a8VnF-aw" target="_blank" class="btn-video">▶ Aula 28 - Saindo da Caixa: Conjugados Estáticos (1)</a>
-                            <a href="https://youtu.be/p5dyXSOO-Pw" target="_blank" class="btn-video">▶ Aula 29 - Saindo da Caixa: Conjugados Estáticos (2)</a>
-                            <a href="https://youtu.be/Kv9IEqL8h4U" target="_blank" class="btn-video">▶ Aula 30 - Saindo da Caixa: Conjugados Estáticos (3)</a>
-                            <a href="https://youtu.be/62yl_YwBhUM" target="_blank" class="btn-video">▶ Aula 31 - Saindo da Caixa: Conjugados Estáticos (4)</a>
-                            <a href="https://youtu.be/T6mKNwUID7M" target="_blank" class="btn-video">▶ Aula 32 - Saindo da Caixa: Conjugados Estáticos (5)</a>
-                            <a href="https://youtu.be/j48dfHl1VHY" target="_blank" class="btn-video">▶ Aula 33 - Saindo da Caixa: Conjugados Estáticos (6)</a>
-                            <a href="https://youtu.be/Lb6UsP1VShQ" target="_blank" class="btn-video">▶ Aula 34 - Senta em Movimento (1)</a>
-                            <a href="https://youtu.be/yEpGN23LzbY" target="_blank" class="btn-video">▶ Aula 35 - Senta em Movimento (2)</a>
-                            <a href="https://youtu.be/mfD7MO79PGM" target="_blank" class="btn-video">▶ Aula 36 - Deita em Movimento</a>
-                            <a href="https://youtu.be/0YUGpbgOLDM" target="_blank" class="btn-video">▶ Aula 37 - Para em Movimento (1)</a>
-                            <a href="https://youtu.be/sWF6XOkk1wo" target="_blank" class="btn-video">▶ Aula 38 - Para em Movimento (2)</a>
-                            <a href="https://youtu.be/0vKzBoKDCf0" target="_blank" class="btn-video">▶ Aula 39 - Senta em Movimento em Condução</a>
-                            <a href="https://youtu.be/8PT9kJc7LLM" target="_blank" class="btn-video">▶ Aula 40 - Senta em Movimento em Condução com Ajudante</a>
-                            <a href="https://youtu.be/FccOSx38nMs" target="_blank" class="btn-video">▶ Aula 41 - Deita em Movimento em Condução</a>
-                            <a href="https://youtu.be/Jhts7EqKUeQ" target="_blank" class="btn-video">▶ Aula 42 - Preparando para os Saltos</a>
-                            <a href="https://youtu.be/dMt-MdLQTLc" target="_blank" class="btn-video">▶ Aula 43 - Saltos 01</a>
-                            <a href="https://youtu.be/t9hLkkVDQ5Q" target="_blank" class="btn-video">▶ Aula 44 - Saltos 02</a>
-                            <a href="https://youtu.be/1DXeulNlrRU" target="_blank" class="btn-video">▶ Aula 45 - Saltos 03</a>
-                            <a href="https://youtu.be/j9oluQAihWg" target="_blank" class="btn-video">▶ Aula 46 - Saltos 04</a>
-                            <a href="https://youtu.be/iKNiKiyb-i8" target="_blank" class="btn-video">▶ Aula 47 - Saltos 05</a>
-                            <a href="https://youtu.be/k3-Dvdb7Zjw" target="_blank" class="btn-video">▶ Aula 48 - Saltos 06</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 3 - Vamos aos Treinos no Mundo Ideal!]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/N3HzD-_8u8I" target="_blank" class="btn-video">▶ Aula 1 - Introdução</a>
+                                <a href="https://youtu.be/CUD7dcvT9xo" target="_blank" class="btn-video">▶ Aula 2 - Fundamentos, Posições e Cognição</a>
+                                <a href="https://youtu.be/lpr5Hz7Qny0" target="_blank" class="btn-video">▶ Aula 3 - Motivação</a>
+                                <a href="https://youtu.be/0op5RSvpzCE" target="_blank" class="btn-video">▶ Aula 4 - Utilidades da Caixa de Transporte</a>
+                                <a href="https://youtu.be/J_sq50bAPa4" target="_blank" class="btn-video">▶ Aula 5 - Ensinando Filhote a Entrar na Caixa</a>
+                                <a href="https://youtu.be/zvHgnU3hzBo" target="_blank" class="btn-video">▶ Aula 6 - Utilizando Caixa nos Treinos</a>
+                                <a href="https://youtu.be/xfBTVY-RG5o" target="_blank" class="btn-video">▶ Aula 7 - Preparando Ração para Treinar</a>
+                                <a href="https://youtu.be/pELmcnXW-4I" target="_blank" class="btn-video">▶ Aula 8 - Ambiente Motivacional: Mesa Pedagógica 01</a>
+                                <a href="https://youtu.be/7JI-0Qi3gxU" target="_blank" class="btn-video">▶ Aula 9 - Ambiente Motivacional: Mesa Pedagógica 02</a>
+                                <a href="https://youtu.be/JXEdPLoEQ1s" target="_blank" class="btn-video">▶ Aula 10 - Ambiente Motivacional: Caixa de Referência</a>
+                                <a href="https://youtu.be/CUWfWfBBlrk" target="_blank" class="btn-video">▶ Aula 11 - Ambiente Motivacional: Campo (Parte 1)</a>
+                                <a href="https://youtu.be/hWPsOxJm70I" target="_blank" class="btn-video">▶ Aula 12 - Ambiente Motivacional: Campo (Parte 2)</a>
+                                <a href="https://youtu.be/DWtPf8smvtM" target="_blank" class="btn-video">▶ Aula 13 - Não Ensine Cão a Fugir com Bola</a>
+                                <a href="https://youtu.be/rlswMaDu7nk" target="_blank" class="btn-video">▶ Aula 14 - Uso da Guia de Contato</a>
+                                <a href="https://youtu.be/8TjeDfLAUN0" target="_blank" class="btn-video">▶ Aula 15 - A Mesa do Início (Parte 1)</a>
+                                <a href="https://youtu.be/9x2wNkt4USM" target="_blank" class="btn-video">▶ Aula 16 - A Mesa do Início (Parte 2)</a>
+                                <a href="https://youtu.be/coCNv06i1xY" target="_blank" class="btn-video">▶ Aula 17 - Contato Manual: O Início</a>
+                                <a href="https://youtu.be/PAe8eIArWQI" target="_blank" class="btn-video">▶ Aula 18 - Contato Manual: Continuando</a>
+                                <a href="https://youtu.be/QWi2t08xXLU" target="_blank" class="btn-video">▶ Aula 19 - Transição Manual para Mecânico</a>
+                                <a href="https://youtu.be/AhnJCruTu4c" target="_blank" class="btn-video">▶ Aula 20 - Contato Mecânico: O Início</a>
+                                <a href="https://youtu.be/Jzg8fKzlqQI" target="_blank" class="btn-video">▶ Aula 21 - Contato Mecânico: Continuando (1)</a>
+                                <a href="https://youtu.be/cabpnT08rwI" target="_blank" class="btn-video">▶ Aula 22 - Contato Mecânico: Continuando (2)</a>
+                                <a href="https://youtu.be/o4eP7wQC2Mk" target="_blank" class="btn-video">▶ Aula 23 - Contato Verbal: O Início</a>
+                                <a href="https://youtu.be/BhiI-pkhVgo" target="_blank" class="btn-video">▶ Aula 24 - Contato Verbal: Indo para o Chão</a>
+                                <a href="https://youtu.be/hL9f461iUHY" target="_blank" class="btn-video">▶ Aula 25 - Contato Verbal: Continuando no Chão (1)</a>
+                                <a href="https://youtu.be/WzJUlTRnSoQ" target="_blank" class="btn-video">▶ Aula 26 - Contato Verbal: Continuando no Chão (2)</a>
+                                <a href="https://youtu.be/fi7nDxAdsGc" target="_blank" class="btn-video">▶ Aula 27 - Contato Verbal: Elevando a Emoção</a>
+                                <a href="https://youtu.be/1-2a8VnF-aw" target="_blank" class="btn-video">▶ Aula 28 - Saindo da Caixa: Conjugados Estáticos (1)</a>
+                                <a href="https://youtu.be/p5dyXSOO-Pw" target="_blank" class="btn-video">▶ Aula 29 - Saindo da Caixa: Conjugados Estáticos (2)</a>
+                                <a href="https://youtu.be/Kv9IEqL8h4U" target="_blank" class="btn-video">▶ Aula 30 - Saindo da Caixa: Conjugados Estáticos (3)</a>
+                                <a href="https://youtu.be/62yl_YwBhUM" target="_blank" class="btn-video">▶ Aula 31 - Saindo da Caixa: Conjugados Estáticos (4)</a>
+                                <a href="https://youtu.be/T6mKNwUID7M" target="_blank" class="btn-video">▶ Aula 32 - Saindo da Caixa: Conjugados Estáticos (5)</a>
+                                <a href="https://youtu.be/j48dfHl1VHY" target="_blank" class="btn-video">▶ Aula 33 - Saindo da Caixa: Conjugados Estáticos (6)</a>
+                                <a href="https://youtu.be/Lb6UsP1VShQ" target="_blank" class="btn-video">▶ Aula 34 - Senta em Movimento (1)</a>
+                                <a href="https://youtu.be/yEpGN23LzbY" target="_blank" class="btn-video">▶ Aula 35 - Senta em Movimento (2)</a>
+                                <a href="https://youtu.be/mfD7MO79PGM" target="_blank" class="btn-video">▶ Aula 36 - Deita em Movimento</a>
+                                <a href="https://youtu.be/0YUGpbgOLDM" target="_blank" class="btn-video">▶ Aula 37 - Para em Movimento (1)</a>
+                                <a href="https://youtu.be/sWF6XOkk1wo" target="_blank" class="btn-video">▶ Aula 38 - Para em Movimento (2)</a>
+                                <a href="https://youtu.be/0vKzBoKDCf0" target="_blank" class="btn-video">▶ Aula 39 - Senta em Movimento em Condução</a>
+                                <a href="https://youtu.be/8PT9kJc7LLM" target="_blank" class="btn-video">▶ Aula 40 - Senta em Movimento em Condução com Ajudante</a>
+                                <a href="https://youtu.be/FccOSx38nMs" target="_blank" class="btn-video">▶ Aula 41 - Deita em Movimento em Condução</a>
+                                <a href="https://youtu.be/Jhts7EqKUeQ" target="_blank" class="btn-video">▶ Aula 42 - Preparando para os Saltos</a>
+                                <a href="https://youtu.be/dMt-MdLQTLc" target="_blank" class="btn-video">▶ Aula 43 - Saltos 01</a>
+                                <a href="https://youtu.be/t9hLkkVDQ5Q" target="_blank" class="btn-video">▶ Aula 44 - Saltos 02</a>
+                                <a href="https://youtu.be/1DXeulNlrRU" target="_blank" class="btn-video">▶ Aula 45 - Saltos 03</a>
+                                <a href="https://youtu.be/j9oluQAihWg" target="_blank" class="btn-video">▶ Aula 46 - Saltos 04</a>
+                                <a href="https://youtu.be/iKNiKiyb-i8" target="_blank" class="btn-video">▶ Aula 47 - Saltos 05</a>
+                                <a href="https://youtu.be/k3-Dvdb7Zjw" target="_blank" class="btn-video">▶ Aula 48 - Saltos 06</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 4]</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/BjMHWXA3ekM" target="_blank" class="btn-video">▶ Aula 1 - Contato Manual Chão / Poste Rígido (Xara)</a>
-                            <a href="https://youtu.be/IEjvy0TLW7s" target="_blank" class="btn-video">▶ Aula 2 - Contato Manual Caixa / Chão (Dori - 1)</a>
-                            <a href="https://youtu.be/hhLDP3mBjbo" target="_blank" class="btn-video">▶ Aula 3 - Contato Manual Caixa / Chão (Dori - 2)</a>
-                            <a href="https://youtu.be/3MnAYROGm78" target="_blank" class="btn-video">▶ Aula 4 - Contato Manual Caixa / Chão (Zena - 1)</a>
-                            <a href="https://youtu.be/MYtqQyu_H80" target="_blank" class="btn-video">▶ Aula 5 - Contato Manual Caixa / Chão (Zena - 2)</a>
-                            <a href="https://youtu.be/KNwd6ZspqFU" target="_blank" class="btn-video">▶ Aula 6 - Contato Manual Caixa / Chão (Zena - 3)</a>
-                            <a href="https://youtu.be/bo3v2u_9rSs" target="_blank" class="btn-video">▶ Aula 7 - Contato Manual Caixa / Chão (Colt)</a>
-                            <a href="https://youtu.be/2qTXm4UFU9o" target="_blank" class="btn-video">▶ Aula 8 - Contato Mecânico para Verbal Caixa / Chão (Xara - 1)</a>
-                            <a href="https://youtu.be/2K4BLn8oxac" target="_blank" class="btn-video">▶ Aula 9 - Contato Mecânico para Verbal Caixa / Chão (Xara - 2)</a>
-                            <a href="https://youtu.be/weaBbxYiGwc" target="_blank" class="btn-video">▶ Aula 10 - Contato Mecânico para Verbal Caixa / Chão (Neta - 1)</a>
-                            <a href="https://youtu.be/CgODIX0xHh8" target="_blank" class="btn-video">▶ Aula 11 - Contato Mecânico para Verbal Caixa / Chão (Neta - 2)</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 3 - Aplicação Técnica [Parte 4]</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/BjMHWXA3ekM" target="_blank" class="btn-video">▶ Aula 1 - Contato Manual Chão / Poste Rígido (Xara)</a>
+                                <a href="https://youtu.be/IEjvy0TLW7s" target="_blank" class="btn-video">▶ Aula 2 - Contato Manual Caixa / Chão (Dori - 1)</a>
+                                <a href="https://youtu.be/hhLDP3mBjbo" target="_blank" class="btn-video">▶ Aula 3 - Contato Manual Caixa / Chão (Dori - 2)</a>
+                                <a href="https://youtu.be/3MnAYROGm78" target="_blank" class="btn-video">▶ Aula 4 - Contato Manual Caixa / Chão (Zena - 1)</a>
+                                <a href="https://youtu.be/MYtqQyu_H80" target="_blank" class="btn-video">▶ Aula 5 - Contato Manual Caixa / Chão (Zena - 2)</a>
+                                <a href="https://youtu.be/KNwd6ZspqFU" target="_blank" class="btn-video">▶ Aula 6 - Contato Manual Caixa / Chão (Zena - 3)</a>
+                                <a href="https://youtu.be/bo3v2u_9rSs" target="_blank" class="btn-video">▶ Aula 7 - Contato Manual Caixa / Chão (Colt)</a>
+                                <a href="https://youtu.be/2qTXm4UFU9o" target="_blank" class="btn-video">▶ Aula 8 - Contato Mecânico para Verbal Caixa / Chão (Xara - 1)</a>
+                                <a href="https://youtu.be/2K4BLn8oxac" target="_blank" class="btn-video">▶ Aula 9 - Contato Mecânico para Verbal Caixa / Chão (Xara - 2)</a>
+                                <a href="https://youtu.be/weaBbxYiGwc" target="_blank" class="btn-video">▶ Aula 10 - Contato Mecânico para Verbal Caixa / Chão (Neta - 1)</a>
+                                <a href="https://youtu.be/CgODIX0xHh8" target="_blank" class="btn-video">▶ Aula 11 - Contato Mecânico para Verbal Caixa / Chão (Neta - 2)</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
                 <!-- CURSO II -->
-                <div class="course-block">
-                    <div class="course-title">II - Indicação de Objetos</div>
-                    <div class="module-block">
-                        <div class="module-title">Aulas Práticas e Teóricas</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/99lnm8ikdAY" target="_blank" class="btn-video">▶ Introdução</a>
-                            <a href="https://youtu.be/ccdoq0xkCfk" target="_blank" class="btn-video">▶ Aula 02 - O Início</a>
-                            <a href="https://youtu.be/ZyhZlf-RUG8" target="_blank" class="btn-video">▶ Aula 03 - Complementação com o Negativo</a>
-                            <a href="https://youtu.be/Eo8_2YTO6_w" target="_blank" class="btn-video">▶ Aula 04 - Ambiente Motivacional (Caixa de Referência)</a>
-                            <a href="https://youtu.be/BQFSoSNSMCA" target="_blank" class="btn-video">▶ Aula 05 - Modelando do Início</a>
-                            <a href="https://youtu.be/A9eSzZ_F1SE" target="_blank" class="btn-video">▶ Aula 06 - Continuando a Modelagem</a>
-                            <a href="https://youtu.be/TZZ_d4Db2Ok" target="_blank" class="btn-video">▶ Aula 07 - Desenvolvendo o Positivo</a>
-                            <a href="https://youtu.be/Xifj4P77MIY" target="_blank" class="btn-video">▶ Aula 09 - Stay in Position</a>
-                            <a href="https://youtu.be/lMR4oPJN28U" target="_blank" class="btn-video">▶ Aula 10 - Iniciando Contato Momentâneo</a>
-                            <a href="https://youtu.be/HVRbNVZQC_4" target="_blank" class="btn-video">▶ Aula 11 - Continuando Contato Momentâneo</a>
-                            <a href="https://youtu.be/Avmkt_MkbKI" target="_blank" class="btn-video">▶ Aula 12 - Iniciando Contato Contínuo</a>
-                            <a href="https://youtu.be/bqwpwWFtjYc" target="_blank" class="btn-video">▶ Aula 13 - Contato Contínuo: Introdução do Stress</a>
-                            <a href="https://youtu.be/y94e8xj4v_Q" target="_blank" class="btn-video">▶ Aula 14 - Contato Contínuo: Aumento do Stress</a>
-                            <a href="https://youtu.be/jmw_3YdO5RE" target="_blank" class="btn-video">▶ Aula 15 - Aumentando a Dificuldade</a>
-                            <a href="https://youtu.be/ooI3gkUoGR0" target="_blank" class="btn-video">▶ Aula 16 - Aplicação Prática: Localização de Objetos</a>
-                            <a href="https://youtu.be/REKVFbBVc_4" target="_blank" class="btn-video">▶ Aula 17 - Aplicação Prática: Indicação na Trilha</a>
-                            <a href="https://youtu.be/v7AYX_a3y7s" target="_blank" class="btn-video">▶ Aula 18 - Aplicação Prática: Prova de IPO</a>
-                            <a href="https://youtu.be/c2jzIgj7CWc" target="_blank" class="btn-video">▶ Aula 19 - Aplicação Prática: Adaptação para Detecção</a>
-                            <a href="https://youtu.be/5IN0MzJoGCg" target="_blank" class="btn-video">▶ Aula 20 - Analisando Treino de Faro</a>
-                            <a href="https://youtu.be/rUgiNsH7ZVQ" target="_blank" class="btn-video">▶ Aula 21 - Equipamentos e Produtos</a>
-                            <a href="https://youtu.be/ERTl5AxSdDE" target="_blank" class="btn-video">▶ Aula 22 - Ferramenta Scent Wheel 01</a>
-                            <a href="https://youtu.be/s60mhiHNivw" target="_blank" class="btn-video">▶ Aula 23 - Ferramenta Scent Wheel 02</a>
+                <details class="course-block">
+                    <summary class="course-title">II - Indicação de Objetos</summary>
+                    <div class="course-content">
+                        <div class="module-block">
+                            <div class="module-title">Aulas Práticas e Teóricas</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/99lnm8ikdAY" target="_blank" class="btn-video">▶ Introdução</a>
+                                <a href="https://youtu.be/ccdoq0xkCfk" target="_blank" class="btn-video">▶ Aula 02 - O Início</a>
+                                <a href="https://youtu.be/ZyhZlf-RUG8" target="_blank" class="btn-video">▶ Aula 03 - Complementação com o Negativo</a>
+                                <a href="https://youtu.be/Eo8_2YTO6_w" target="_blank" class="btn-video">▶ Aula 04 - Ambiente Motivacional (Caixa de Referência)</a>
+                                <a href="https://youtu.be/BQFSoSNSMCA" target="_blank" class="btn-video">▶ Aula 05 - Modelando do Início</a>
+                                <a href="https://youtu.be/A9eSzZ_F1SE" target="_blank" class="btn-video">▶ Aula 06 - Continuando a Modelagem</a>
+                                <a href="https://youtu.be/TZZ_d4Db2Ok" target="_blank" class="btn-video">▶ Aula 07 - Desenvolvendo o Positivo</a>
+                                <a href="https://youtu.be/Xifj4P77MIY" target="_blank" class="btn-video">▶ Aula 09 - Stay in Position</a>
+                                <a href="https://youtu.be/lMR4oPJN28U" target="_blank" class="btn-video">▶ Aula 10 - Iniciando Contato Momentâneo</a>
+                                <a href="https://youtu.be/HVRbNVZQC_4" target="_blank" class="btn-video">▶ Aula 11 - Continuando Contato Momentâneo</a>
+                                <a href="https://youtu.be/Avmkt_MkbKI" target="_blank" class="btn-video">▶ Aula 12 - Iniciando Contato Contínuo</a>
+                                <a href="https://youtu.be/bqwpwWFtjYc" target="_blank" class="btn-video">▶ Aula 13 - Contato Contínuo: Introdução do Stress</a>
+                                <a href="https://youtu.be/y94e8xj4v_Q" target="_blank" class="btn-video">▶ Aula 14 - Contato Contínuo: Aumento do Stress</a>
+                                <a href="https://youtu.be/jmw_3YdO5RE" target="_blank" class="btn-video">▶ Aula 15 - Aumentando a Dificuldade</a>
+                                <a href="https://youtu.be/ooI3gkUoGR0" target="_blank" class="btn-video">▶ Aula 16 - Aplicação Prática: Localização de Objetos</a>
+                                <a href="https://youtu.be/REKVFbBVc_4" target="_blank" class="btn-video">▶ Aula 17 - Aplicação Prática: Indicação na Trilha</a>
+                                <a href="https://youtu.be/v7AYX_a3y7s" target="_blank" class="btn-video">▶ Aula 18 - Aplicação Prática: Prova de IPO</a>
+                                <a href="https://youtu.be/c2jzIgj7CWc" target="_blank" class="btn-video">▶ Aula 19 - Aplicação Prática: Adaptação para Detecção</a>
+                                <a href="https://youtu.be/5IN0MzJoGCg" target="_blank" class="btn-video">▶ Aula 20 - Analisando Treino de Faro</a>
+                                <a href="https://youtu.be/rUgiNsH7ZVQ" target="_blank" class="btn-video">▶ Aula 21 - Equipamentos e Produtos</a>
+                                <a href="https://youtu.be/ERTl5AxSdDE" target="_blank" class="btn-video">▶ Aula 22 - Ferramenta Scent Wheel 01</a>
+                                <a href="https://youtu.be/s60mhiHNivw" target="_blank" class="btn-video">▶ Aula 23 - Ferramenta Scent Wheel 02</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
                 <!-- CURSO III -->
-                <div class="course-block">
-                    <div class="course-title">III - Busca de Halteres</div>
-                    <div class="module-block">
-                        <div class="module-title">Aulas Práticas e Teóricas</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/vk3j1Yz99ZI" target="_blank" class="btn-video">▶ Aula 01 - Introdução</a>
-                            <a href="https://youtu.be/yaEF4XMtGR0" target="_blank" class="btn-video">▶ Aula 02 - Um dos Sistemas</a>
-                            <a href="https://youtu.be/ux-R5sIwLko" target="_blank" class="btn-video">▶ Aula 03 - Antes de Qualquer Coisa</a>
-                            <a href="https://youtu.be/KQGSbEf5dbs" target="_blank" class="btn-video">▶ Aula 04 - Iniciando</a>
-                            <a href="https://youtu.be/UwnUmbolN6w" target="_blank" class="btn-video">▶ Aula 05 - A Criação do Quadro</a>
-                            <a href="https://youtu.be/t2u-Cqsh7uI" target="_blank" class="btn-video">▶ Aula 06 - Passando para o Tubo Plástico</a>
-                            <a href="https://youtu.be/PIj6mk3YMtQ" target="_blank" class="btn-video">▶ Aula 07 - Iniciando a Recompensa Indireta</a>
-                            <a href="https://youtu.be/U9Lg_37wago" target="_blank" class="btn-video">▶ Aula 08 - Progredindo o Quadro</a>
-                            <a href="https://youtu.be/Rm4nwJ97CJ8" target="_blank" class="btn-video">▶ Aula 09 - Do Clicker para o Comando de Liberação</a>
-                            <a href="https://youtu.be/5nsfiSEfhDc" target="_blank" class="btn-video">▶ Aula 10 - Indo para o Campo</a>
-                            <a href="https://youtu.be/92_SStT61nc" target="_blank" class="btn-video">▶ Aula 11 - No Campo com Bastão de Madeira</a>
-                            <a href="https://youtu.be/7J94x2dGKSM" target="_blank" class="btn-video">▶ Aula 12 - Progredindo com o Bastão de Madeira</a>
-                            <a href="https://youtu.be/iVeAvkQyMc4" target="_blank" class="btn-video">▶ Aula 13 - O Início do Quadro com o Halter</a>
-                            <a href="https://youtu.be/-VmOWXbL1Ag" target="_blank" class="btn-video">▶ Aula 14 - Preparando para os Saltos</a>
-                            <a href="https://youtu.be/v-VvUZXVMRo" target="_blank" class="btn-video">▶ Aula 15 - Saltos 01</a>
-                            <a href="https://youtu.be/HjxlD8nGl_0" target="_blank" class="btn-video">▶ Aula 16 - Saltos 02</a>
-                            <a href="https://youtu.be/3g6eunM2Gsk" target="_blank" class="btn-video">▶ Aula 17 - Saltos 03</a>
-                            <a href="https://youtu.be/yTg8P9jU6BE" target="_blank" class="btn-video">▶ Aula 18 - Salto 04</a>
-                            <a href="https://youtu.be/SCLCXnh22OE" target="_blank" class="btn-video">▶ Aula 19 - Saltos 05</a>
-                            <a href="https://youtu.be/woCyXzlhLa0" target="_blank" class="btn-video">▶ Aula 20 - Saltos 06</a>
-                            <a href="https://youtu.be/wmXW6pPTl_I" target="_blank" class="btn-video">▶ Aula 21 - Salto com Bolas</a>
-                            <a href="https://youtu.be/MvInUW1Zn_w" target="_blank" class="btn-video">▶ Aula 22 - Conjugando Exercícios</a>
+                <details class="course-block">
+                    <summary class="course-title">III - Busca de Halteres</summary>
+                    <div class="course-content">
+                        <div class="module-block">
+                            <div class="module-title">Aulas Práticas e Teóricas</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/vk3j1Yz99ZI" target="_blank" class="btn-video">▶ Aula 01 - Introdução</a>
+                                <a href="https://youtu.be/yaEF4XMtGR0" target="_blank" class="btn-video">▶ Aula 02 - Um dos Sistemas</a>
+                                <a href="https://youtu.be/ux-R5sIwLko" target="_blank" class="btn-video">▶ Aula 03 - Antes de Qualquer Coisa</a>
+                                <a href="https://youtu.be/KQGSbEf5dbs" target="_blank" class="btn-video">▶ Aula 04 - Iniciando</a>
+                                <a href="https://youtu.be/UwnUmbolN6w" target="_blank" class="btn-video">▶ Aula 05 - A Criação do Quadro</a>
+                                <a href="https://youtu.be/t2u-Cqsh7uI" target="_blank" class="btn-video">▶ Aula 06 - Passando para o Tubo Plástico</a>
+                                <a href="https://youtu.be/PIj6mk3YMtQ" target="_blank" class="btn-video">▶ Aula 07 - Iniciando a Recompensa Indireta</a>
+                                <a href="https://youtu.be/U9Lg_37wago" target="_blank" class="btn-video">▶ Aula 08 - Progredindo o Quadro</a>
+                                <a href="https://youtu.be/Rm4nwJ97CJ8" target="_blank" class="btn-video">▶ Aula 09 - Do Clicker para o Comando de Liberação</a>
+                                <a href="https://youtu.be/5nsfiSEfhDc" target="_blank" class="btn-video">▶ Aula 10 - Indo para o Campo</a>
+                                <a href="https://youtu.be/92_SStT61nc" target="_blank" class="btn-video">▶ Aula 11 - No Campo com Bastão de Madeira</a>
+                                <a href="https://youtu.be/7J94x2dGKSM" target="_blank" class="btn-video">▶ Aula 12 - Progredindo com o Bastão de Madeira</a>
+                                <a href="https://youtu.be/iVeAvkQyMc4" target="_blank" class="btn-video">▶ Aula 13 - O Início do Quadro com o Halter</a>
+                                <a href="https://youtu.be/-VmOWXbL1Ag" target="_blank" class="btn-video">▶ Aula 14 - Preparando para os Saltos</a>
+                                <a href="https://youtu.be/v-VvUZXVMRo" target="_blank" class="btn-video">▶ Aula 15 - Saltos 01</a>
+                                <a href="https://youtu.be/HjxlD8nGl_0" target="_blank" class="btn-video">▶ Aula 16 - Saltos 02</a>
+                                <a href="https://youtu.be/3g6eunM2Gsk" target="_blank" class="btn-video">▶ Aula 17 - Saltos 03</a>
+                                <a href="https://youtu.be/yTg8P9jU6BE" target="_blank" class="btn-video">▶ Aula 18 - Salto 04</a>
+                                <a href="https://youtu.be/SCLCXnh22OE" target="_blank" class="btn-video">▶ Aula 19 - Saltos 05</a>
+                                <a href="https://youtu.be/woCyXzlhLa0" target="_blank" class="btn-video">▶ Aula 20 - Saltos 06</a>
+                                <a href="https://youtu.be/wmXW6pPTl_I" target="_blank" class="btn-video">▶ Aula 21 - Salto com Bolas</a>
+                                <a href="https://youtu.be/MvInUW1Zn_w" target="_blank" class="btn-video">▶ Aula 22 - Conjugando Exercícios</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
                 <!-- CURSO IV -->
-                <div class="course-block">
-                    <div class="course-title">IV - Condução de Alta Performance</div>
-                    
-                    <div class="module-block">
-                        <div class="module-title">Módulo 1</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/QyzSDIfFWtI" target="_blank" class="btn-video">▶ Aula 01 - Compreendendo a Condução</a>
-                            <a href="https://youtu.be/YbNN1yIYDTs" target="_blank" class="btn-video">▶ Aula 02 - A Coordenação Motora e Memória Muscular</a>
-                            <a href="https://youtu.be/ohpLgqBsZZU" target="_blank" class="btn-video">▶ Aula 03 - Momentos de Premiação</a>
-                            <a href="https://youtu.be/Kshs3z1xxvs" target="_blank" class="btn-video">▶ Aula 04 - A Cognição na Coordenação</a>
-                            <a href="https://youtu.be/DMr8lfTCS-Y" target="_blank" class="btn-video">▶ Aula 05 - A Meia Volta</a>
-                            <a href="https://youtu.be/wLg-UuVrU0A" target="_blank" class="btn-video">▶ Aula 06 - Visando o Futuro</a>
-                            <a href="https://youtu.be/BgByMJ2dD_Y" target="_blank" class="btn-video">▶ Aula 07 - A Condução</a>
-                            <a href="https://youtu.be/Smk7mwY39gw" target="_blank" class="btn-video">▶ Aula 08 - Coordenando e Aprendendo Sinalizações</a>
-                            <a href="https://youtu.be/StrjZ3ZGFFM" target="_blank" class="btn-video">▶ Aula 09 - Aumentando o Intervalo de Recompensa</a>
-                            <a href="https://youtu.be/ZxbfhI2zbbw" target="_blank" class="btn-video">▶ Aula 10 - Excepcionalmente o Uso da Guia Pode Auxiliar</a>
+                <details class="course-block">
+                    <summary class="course-title">IV - Condução de Alta Performance</summary>
+                    <div class="course-content">
+                        <div class="module-block">
+                            <div class="module-title">Módulo 1</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/QyzSDIfFWtI" target="_blank" class="btn-video">▶ Aula 01 - Compreendendo a Condução</a>
+                                <a href="https://youtu.be/YbNN1yIYDTs" target="_blank" class="btn-video">▶ Aula 02 - A Coordenação Motora e Memória Muscular</a>
+                                <a href="https://youtu.be/ohpLgqBsZZU" target="_blank" class="btn-video">▶ Aula 03 - Momentos de Premiação</a>
+                                <a href="https://youtu.be/Kshs3z1xxvs" target="_blank" class="btn-video">▶ Aula 04 - A Cognição na Coordenação</a>
+                                <a href="https://youtu.be/DMr8lfTCS-Y" target="_blank" class="btn-video">▶ Aula 05 - A Meia Volta</a>
+                                <a href="https://youtu.be/wLg-UuVrU0A" target="_blank" class="btn-video">▶ Aula 06 - Visando o Futuro</a>
+                                <a href="https://youtu.be/BgByMJ2dD_Y" target="_blank" class="btn-video">▶ Aula 07 - A Condução</a>
+                                <a href="https://youtu.be/Smk7mwY39gw" target="_blank" class="btn-video">▶ Aula 08 - Coordenando e Aprendendo Sinalizações</a>
+                                <a href="https://youtu.be/StrjZ3ZGFFM" target="_blank" class="btn-video">▶ Aula 09 - Aumentando o Intervalo de Recompensa</a>
+                                <a href="https://youtu.be/ZxbfhI2zbbw" target="_blank" class="btn-video">▶ Aula 10 - Excepcionalmente o Uso da Guia Pode Auxiliar</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 2</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/o_ZDyBY6xwg" target="_blank" class="btn-video">▶ Aula 01 - O Uso da Guia de Contato</a>
-                            <a href="https://youtu.be/vxgyR1napgQ" target="_blank" class="btn-video">▶ Aula 02 - Inserindo os Fundamentos</a>
-                            <a href="https://youtu.be/SOiwXIXbPvY" target="_blank" class="btn-video">▶ Aula 03 - Fundamentos</a>
-                            <a href="https://youtu.be/otlPPmwORHE" target="_blank" class="btn-video">▶ Aula 04 - Adicionando Dificuldades</a>
-                            <a href="https://youtu.be/68kvYrkneAA" target="_blank" class="btn-video">▶ Aula 05 - Coordenando com Recompensa Direta</a>
-                            <a href="https://youtu.be/ZkVQtHXBMC4" target="_blank" class="btn-video">▶ Aula 06 - Transição da Recompensa Direta para a Indireta</a>
-                            <a href="https://youtu.be/10Vxm1zR4SY" target="_blank" class="btn-video">▶ Aula 07 - Recompensa Indireta: O Início</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 2</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/o_ZDyBY6xwg" target="_blank" class="btn-video">▶ Aula 01 - O Uso da Guia de Contato</a>
+                                <a href="https://youtu.be/vxgyR1napgQ" target="_blank" class="btn-video">▶ Aula 02 - Inserindo os Fundamentos</a>
+                                <a href="https://youtu.be/SOiwXIXbPvY" target="_blank" class="btn-video">▶ Aula 03 - Fundamentos</a>
+                                <a href="https://youtu.be/otlPPmwORHE" target="_blank" class="btn-video">▶ Aula 04 - Adicionando Dificuldades</a>
+                                <a href="https://youtu.be/68kvYrkneAA" target="_blank" class="btn-video">▶ Aula 05 - Coordenando com Recompensa Direta</a>
+                                <a href="https://youtu.be/ZkVQtHXBMC4" target="_blank" class="btn-video">▶ Aula 06 - Transição da Recompensa Direta para a Indireta</a>
+                                <a href="https://youtu.be/10Vxm1zR4SY" target="_blank" class="btn-video">▶ Aula 07 - Recompensa Indireta: O Início</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="module-block">
-                        <div class="module-title">Módulo 3</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/zQhPWAIgxoo" target="_blank" class="btn-video">▶ Aula 01 - A Criação do Ambiente Motivacional</a>
-                            <a href="https://youtu.be/1D5NgyJCOTw" target="_blank" class="btn-video">▶ Aula 02 - O Quadro Evoca a Emoção</a>
-                            <a href="https://youtu.be/jpuk0YRos20" target="_blank" class="btn-video">▶ Aula 03 - Uma Verdadeira Parceria</a>
-                            <a href="https://youtu.be/ozdu9jy8wyk" target="_blank" class="btn-video">▶ Aula 04 - Meia Volta</a>
-                            <a href="https://youtu.be/0VxyZ2Elfjg" target="_blank" class="btn-video">▶ Aula 05 - Desenvolvendo a Meia Volta</a>
-                            <a href="https://youtu.be/rxiEm5I5esg" target="_blank" class="btn-video">▶ Aula 06 - O Spin Pode Ajudar a Meia Volta</a>
-                            <a href="https://youtu.be/bf6jZEC_MCQ" target="_blank" class="btn-video">▶ Aula 07 - Progredindo a Meia Volta</a>
-                            <a href="https://youtu.be/0dI03i6eX_g" target="_blank" class="btn-video">▶ Aula 08 - Uso do Poste Flexível</a>
-                            <a href="https://youtu.be/0Df908ZyUEw" target="_blank" class="btn-video">▶ Aula 09 - Uso dos Latidos para Melhorar a Emoção</a>
-                            <a href="https://youtu.be/XeErY7b9B8c" target="_blank" class="btn-video">▶ Aula 10 - Quase Pronto</a>
-                            <a href="https://youtu.be/SOVeYzy2dKQ" target="_blank" class="btn-video">▶ Aula 11 - Principais Erros</a>
-                            <a href="https://youtu.be/AfGihmCtqvc" target="_blank" class="btn-video">▶ Aula 12 - Finalização</a>
+                        <div class="module-block">
+                            <div class="module-title">Módulo 3</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/zQhPWAIgxoo" target="_blank" class="btn-video">▶ Aula 01 - A Criação do Ambiente Motivacional</a>
+                                <a href="https://youtu.be/1D5NgyJCOTw" target="_blank" class="btn-video">▶ Aula 02 - O Quadro Evoca a Emoção</a>
+                                <a href="https://youtu.be/jpuk0YRos20" target="_blank" class="btn-video">▶ Aula 03 - Uma Verdadeira Parceria</a>
+                                <a href="https://youtu.be/ozdu9jy8wyk" target="_blank" class="btn-video">▶ Aula 04 - Meia Volta</a>
+                                <a href="https://youtu.be/0VxyZ2Elfjg" target="_blank" class="btn-video">▶ Aula 05 - Desenvolvendo a Meia Volta</a>
+                                <a href="https://youtu.be/rxiEm5I5esg" target="_blank" class="btn-video">▶ Aula 06 - O Spin Pode Ajudar a Meia Volta</a>
+                                <a href="https://youtu.be/bf6jZEC_MCQ" target="_blank" class="btn-video">▶ Aula 07 - Progredindo a Meia Volta</a>
+                                <a href="https://youtu.be/0dI03i6eX_g" target="_blank" class="btn-video">▶ Aula 08 - Uso do Poste Flexível</a>
+                                <a href="https://youtu.be/0Df908ZyUEw" target="_blank" class="btn-video">▶ Aula 09 - Uso dos Latidos para Melhorar a Emoção</a>
+                                <a href="https://youtu.be/XeErY7b9B8c" target="_blank" class="btn-video">▶ Aula 10 - Quase Pronto</a>
+                                <a href="https://youtu.be/SOVeYzy2dKQ" target="_blank" class="btn-video">▶ Aula 11 - Principais Erros</a>
+                                <a href="https://youtu.be/AfGihmCtqvc" target="_blank" class="btn-video">▶ Aula 12 - Finalização</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
                 <!-- CURSO V -->
-                <div class="course-block">
-                    <div class="course-title">V - Obediência para Proteção</div>
-                    <div class="module-block">
-                        <div class="module-title">Aulas Práticas e Teóricas</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/Su_1fmcR26E" target="_blank" class="btn-video">▶ 01 - Aula Conceito</a>
-                            <a href="https://youtu.be/iNHG868P31g" target="_blank" class="btn-video">▶ 02 - O Início (Neta do Sadonana)</a>
-                            <a href="https://youtu.be/zX1zCK0ZWzo" target="_blank" class="btn-video">▶ 03 - O Início (Xara do Sadonana)</a>
-                            <a href="https://youtu.be/LlURQeQ3c0I" target="_blank" class="btn-video">▶ 04 - Continuando (Xara do Sadonana)</a>
-                            <a href="https://youtu.be/dS7pnT0i-9I" target="_blank" class="btn-video">▶ 05 - Próximo Passo (Xara do Sadonana)</a>
-                            <a href="https://youtu.be/IWWoNQBjdlA" target="_blank" class="btn-video">▶ 06 - Prosseguindo (Xara do Sadonana)</a>
-                            <a href="https://youtu.be/1BBUKWY1vas" target="_blank" class="btn-video">▶ 07 - Avançando (Lasco do Sadonana)</a>
-                            <a href="https://youtu.be/ZJx7RTI0wc0" target="_blank" class="btn-video">▶ 08 - Desenvolvimento / Início do Contato para Transportes (Amigo)</a>
-                            <a href="https://youtu.be/lp1Mh5-2W5Q" target="_blank" class="btn-video">▶ 09 - A Comunicação com a Guia</a>
-                            <a href="https://youtu.be/DX4SEUB7cj0" target="_blank" class="btn-video">▶ 10 - Início do Transporte Frontal (Indiana)</a>
-                            <a href="https://youtu.be/4Ovw_IhQk6s" target="_blank" class="btn-video">▶ 11 - Introdução do Larga Sob Comando (Neta)</a>
-                            <a href="https://youtu.be/AKGbfXeR8UU" target="_blank" class="btn-video">▶ 12 - Início da Revista de Esconderijos (Lasco)</a>
-                            <a href="https://youtu.be/ZwPvetAYh2M" target="_blank" class="btn-video">▶ 13 - Introdução com o Figurante</a>
-                            <a href="https://youtu.be/HGiUzMfm5SM" target="_blank" class="btn-video">▶ 14 - Transporte Lateral (Indiana)</a>
-                            <a href="https://youtu.be/0WxMKTFlpsA" target="_blank" class="btn-video">▶ 15 - Transporte Frontal (Indiana)</a>
-                            <a href="https://youtu.be/ePg9_ywCJw0" target="_blank" class="btn-video">▶ 16 - Figurante / Fuss / Revista</a>
-                            <a href="https://youtu.be/Je59g0UasoI" target="_blank" class="btn-video">▶ 17 - Revista de Esconderijos</a>
-                            <a href="https://youtu.be/RGDf57aKPfg" target="_blank" class="btn-video">▶ 18 - Hier / Fuss / Agent</a>
-                            <a href="https://youtu.be/5Meurx6SK3k" target="_blank" class="btn-video">▶ 19 - Início Controle de Estímulos Condução Fuga</a>
-                            <a href="https://youtu.be/2VLxDsqpIas" target="_blank" class="btn-video">▶ 20 - Controle de Estímulos Deita Fuga (Neta)</a>
-                            <a href="https://youtu.be/dI2mJx1Jbck" target="_blank" class="btn-video">▶ 21 - Controle de Estímulos no Lançado (Neta e Lasco)</a>
-                            <a href="https://youtu.be/BfLnjAEyvq4" target="_blank" class="btn-video">▶ 22 - Patrulha Policial (Dito do Império Egípcio)</a>
-                            <a href="https://youtu.be/4yBBpiSwiW4" target="_blank" class="btn-video">▶ 23 - Prova de IPO 1 (Neta)</a>
-                            <a href="https://youtu.be/05EwOQIOKKI" target="_blank" class="btn-video">▶ 24 - Prova de IPO 3 / CBAd 2012 (Agent v Wolfsheim)</a>
+                <details class="course-block">
+                    <summary class="course-title">V - Obediência para Proteção</summary>
+                    <div class="course-content">
+                        <div class="module-block">
+                            <div class="module-title">Aulas Práticas e Teóricas</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/Su_1fmcR26E" target="_blank" class="btn-video">▶ 01 - Aula Conceito</a>
+                                <a href="https://youtu.be/iNHG868P31g" target="_blank" class="btn-video">▶ 02 - O Início (Neta do Sadonana)</a>
+                                <a href="https://youtu.be/zX1zCK0ZWzo" target="_blank" class="btn-video">▶ 03 - O Início (Xara do Sadonana)</a>
+                                <a href="https://youtu.be/LlURQeQ3c0I" target="_blank" class="btn-video">▶ 04 - Continuando (Xara do Sadonana)</a>
+                                <a href="https://youtu.be/dS7pnT0i-9I" target="_blank" class="btn-video">▶ 05 - Próximo Passo (Xara do Sadonana)</a>
+                                <a href="https://youtu.be/IWWoNQBjdlA" target="_blank" class="btn-video">▶ 06 - Prosseguindo (Xara do Sadonana)</a>
+                                <a href="https://youtu.be/1BBUKWY1vas" target="_blank" class="btn-video">▶ 07 - Avançando (Lasco do Sadonana)</a>
+                                <a href="https://youtu.be/ZJx7RTI0wc0" target="_blank" class="btn-video">▶ 08 - Desenvolvimento / Início do Contato para Transportes (Amigo)</a>
+                                <a href="https://youtu.be/lp1Mh5-2W5Q" target="_blank" class="btn-video">▶ 09 - A Comunicação com a Guia</a>
+                                <a href="https://youtu.be/DX4SEUB7cj0" target="_blank" class="btn-video">▶ 10 - Início do Transporte Frontal (Indiana)</a>
+                                <a href="https://youtu.be/4Ovw_IhQk6s" target="_blank" class="btn-video">▶ 11 - Introdução do Larga Sob Comando (Neta)</a>
+                                <a href="https://youtu.be/AKGbfXeR8UU" target="_blank" class="btn-video">▶ 12 - Início da Revista de Esconderijos (Lasco)</a>
+                                <a href="https://youtu.be/ZwPvetAYh2M" target="_blank" class="btn-video">▶ 13 - Introdução com o Figurante</a>
+                                <a href="https://youtu.be/HGiUzMfm5SM" target="_blank" class="btn-video">▶ 14 - Transporte Lateral (Indiana)</a>
+                                <a href="https://youtu.be/0WxMKTFlpsA" target="_blank" class="btn-video">▶ 15 - Transporte Frontal (Indiana)</a>
+                                <a href="https://youtu.be/ePg9_ywCJw0" target="_blank" class="btn-video">▶ 16 - Figurante / Fuss / Revista</a>
+                                <a href="https://youtu.be/Je59g0UasoI" target="_blank" class="btn-video">▶ 17 - Revista de Esconderijos</a>
+                                <a href="https://youtu.be/RGDf57aKPfg" target="_blank" class="btn-video">▶ 18 - Hier / Fuss / Agent</a>
+                                <a href="https://youtu.be/5Meurx6SK3k" target="_blank" class="btn-video">▶ 19 - Início Controle de Estímulos Condução Fuga</a>
+                                <a href="https://youtu.be/2VLxDsqpIas" target="_blank" class="btn-video">▶ 20 - Controle de Estímulos Deita Fuga (Neta)</a>
+                                <a href="https://youtu.be/dI2mJx1Jbck" target="_blank" class="btn-video">▶ 21 - Controle de Estímulos no Lançado (Neta e Lasco)</a>
+                                <a href="https://youtu.be/BfLnjAEyvq4" target="_blank" class="btn-video">▶ 22 - Patrulha Policial (Dito do Império Egípcio)</a>
+                                <a href="https://youtu.be/4yBBpiSwiW4" target="_blank" class="btn-video">▶ 23 - Prova de IPO 1 (Neta)</a>
+                                <a href="https://youtu.be/05EwOQIOKKI" target="_blank" class="btn-video">▶ 24 - Prova de IPO 3 / CBAd 2012 (Agent v Wolfsheim)</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
                 <!-- CURSO VI -->
-                <div class="course-block">
-                    <div class="course-title">VI - Colar Eletrônico: O Uso Pedagógico</div>
-                    <div class="module-block">
-                        <div class="module-title">Aulas Práticas e Teóricas</div>
-                        <div class="video-buttons">
-                            <a href="https://youtu.be/ph9487t8Ab4" target="_blank" class="btn-video">▶ 01 - Introdução</a>
-                            <a href="https://youtu.be/ZGCSUIab2-s" target="_blank" class="btn-video">▶ 02 - Da Origem aos Dias Atuais</a>
-                            <a href="https://youtu.be/dt2uXgqBi2Y" target="_blank" class="btn-video">▶ 03 - Conceitos Comportamentais</a>
-                            <a href="https://youtu.be/QC5M7juY540" target="_blank" class="btn-video">▶ 04 - Fundamentação Técnica</a>
-                            <a href="https://youtu.be/qv-f8uXVnOw" target="_blank" class="btn-video">▶ 05 - Entendendo o Processo</a>
-                            <a href="https://youtu.be/g6e0sh9j5bg" target="_blank" class="btn-video">▶ 06 - Como Fazer</a>
-                            <a href="https://youtu.be/tqbohm-yVVg" target="_blank" class="btn-video">▶ 07 - Marcas e Modelos</a>
-                            <a href="https://youtu.be/dlBm9nWUaJU" target="_blank" class="btn-video">▶ 08 - Dicas de Otimização</a>
-                            <a href="https://youtu.be/1RdmEdTMce4" target="_blank" class="btn-video">▶ 09 - Preparando o Treino</a>
-                            <a href="https://youtu.be/wS1pvcrICFM" target="_blank" class="btn-video">▶ 10 - Considerações Finais</a>
+                <details class="course-block">
+                    <summary class="course-title">VI - Colar Eletrônico: O Uso Pedagógico</summary>
+                    <div class="course-content">
+                        <div class="module-block">
+                            <div class="module-title">Aulas Práticas e Teóricas</div>
+                            <div class="video-buttons">
+                                <a href="https://youtu.be/ph9487t8Ab4" target="_blank" class="btn-video">▶ 01 - Introdução</a>
+                                <a href="https://youtu.be/ZGCSUIab2-s" target="_blank" class="btn-video">▶ 02 - Da Origem aos Dias Atuais</a>
+                                <a href="https://youtu.be/dt2uXgqBi2Y" target="_blank" class="btn-video">▶ 03 - Conceitos Comportamentais</a>
+                                <a href="https://youtu.be/QC5M7juY540" target="_blank" class="btn-video">▶ 04 - Fundamentação Técnica</a>
+                                <a href="https://youtu.be/qv-f8uXVnOw" target="_blank" class="btn-video">▶ 05 - Entendendo o Processo</a>
+                                <a href="https://youtu.be/g6e0sh9j5bg" target="_blank" class="btn-video">▶ 06 - Como Fazer</a>
+                                <a href="https://youtu.be/tqbohm-yVVg" target="_blank" class="btn-video">▶ 07 - Marcas e Modelos</a>
+                                <a href="https://youtu.be/dlBm9nWUaJU" target="_blank" class="btn-video">▶ 08 - Dicas de Otimização</a>
+                                <a href="https://youtu.be/1RdmEdTMce4" target="_blank" class="btn-video">▶ 09 - Preparando o Treino</a>
+                                <a href="https://youtu.be/wS1pvcrICFM" target="_blank" class="btn-video">▶ 10 - Considerações Finais</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </details>
             </div>
 
             <!-- DEMAIS CARTÕES DE INSTRUÇÃO CONTINUADA -->
